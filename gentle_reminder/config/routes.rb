@@ -1,5 +1,11 @@
 GentleReminder::Application.routes.draw do
-  
+  resources :users do
+    resources :goals
+  end
+
+  resources :tools
+
+  resources :charities
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
