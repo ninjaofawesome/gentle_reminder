@@ -21,10 +21,8 @@ ActiveRecord::Schema.define(:version => 20140115155758) do
   end
 
   create_table "goals", :force => true do |t|
-    t.string   "programming_language"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
-    t.integer  "user_id"
+    t.string  "programming_language"
+    t.integer "user_id"
   end
 
   create_table "tools", :force => true do |t|
