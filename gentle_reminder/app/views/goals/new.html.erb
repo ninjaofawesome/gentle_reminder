@@ -1,0 +1,10 @@
+<h1>Goal Created!</h1>
+
+<%= form_for([@user, @goal]) do |f| %>
+<br>
+<%= f.label :programming_language %>
+<%= f.text_field :programming_language%> 
+
+<%= f.submit %>
+
+<%end%>
