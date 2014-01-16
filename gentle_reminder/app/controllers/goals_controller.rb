@@ -36,4 +36,4 @@ class GoalsController < ApplicationController
   end
 
 end 
->>>>>>> 6dc27eb71b3878a2e472e8b726c73a12d1ad0d96
+
