@@ -1,4 +1,3 @@
 class Tool < ActiveRecord::Base
-
-	belongs_to :goal
+  belongs_to :programming_language
 end

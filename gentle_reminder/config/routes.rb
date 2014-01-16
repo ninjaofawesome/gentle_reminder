@@ -3,6 +3,8 @@ GentleReminder::Application.routes.draw do
     resources :goals
   end
 
+  resources :programming_languages
+
   resources :tools
 
   resources :charities
