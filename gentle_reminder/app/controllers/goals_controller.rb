@@ -14,9 +14,9 @@ class GoalsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @goal = @user.goals.build(:programming_language => params[:goal][:programming_language])
+    @goal = @user.goals.build(:goal_type => params[:goal][:goal_type])
     if @goal.save
-      redirect_to user_goals_path(@goal)
+      redirect_to new_tool_path(@goal)
     else
       render "new"
     end
