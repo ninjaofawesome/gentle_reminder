@@ -21,7 +21,7 @@ class GoalsController < ApplicationController
   end
 
   def show
-    @goal = User.find(params[:id])
+    @goal = User.find(params[:id]).goal
   end
 
 end 

@@ -1,6 +1,6 @@
 GentleReminder::Application.routes.draw do
   resources :users do
-    resources :goals
+    resources :goals, :path => 'user_goal_path'
   end
 
   resources :tools
