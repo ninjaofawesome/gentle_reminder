@@ -1,0 +1,10 @@
+<h1>Sanity Bitches</h1>
+
+<%= form_for([@goal, @tool]) do |f| %>
+<br>
+<%= f.label :tool_description, "Tool"%>
+<%= f.check_box :tool_description%> 
+
+<%= f.submit %>
+
+<%end%>

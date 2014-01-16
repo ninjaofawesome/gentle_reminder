@@ -1,3 +1,4 @@
+# require 'debugger'
 class GoalsController < ApplicationController
 
   # def index 
@@ -8,15 +9,22 @@ class GoalsController < ApplicationController
   # end 
 
   def new
+    # need to work on this view
     @user = User.find(params[:user_id])
     @goal = Goal.new
+    @tools = Tool.all
+    @charities = Charity.all
+    @programming_languages = ProgrammingLanguage.all
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @goal = @user.goals.build(:goal_type => params[:goal][:goal_type])
-    if @goal.save
-      redirect_to new_tool_path(@goal)
+    # debugger
+    user = User.find(params[:user_id])
+    goal = user.goals.build(:programming_language_id => params[:programming_language][:id])
+    
+    if goal.save
+      # debugger
+      redirect_to user_goal_path(user, goal)
     else
       render "new"
     end

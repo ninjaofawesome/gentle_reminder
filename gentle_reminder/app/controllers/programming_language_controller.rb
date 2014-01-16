@@ -1,2 +1,0 @@
-class ProgrammingLanguageController < ApplicationController
-end
