@@ -14,8 +14,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      # redirect_to "/users/#{@user.id}/goals/new"
-       redirect_to new_user_goal_path(@user, @goal)
+      redirect_to "/users/#{@user.id}/goals/new"
+       # redirect_to new_user_goal_path(@user)#goal not need because it hasn't been created yet
     else
       render "new"
     end
