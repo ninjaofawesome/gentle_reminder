@@ -9,6 +9,8 @@ GentleReminder::Application.routes.draw do
 
   resources :charities
 
+  resources :sessions, only: [:new, :create, :destroy]
+
   root :to => 'users#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

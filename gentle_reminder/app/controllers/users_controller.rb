@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      # redirect_to "/users/#{@user.id}/goals/new"
+       flash[:success] = "Hooray!  Welcome to a new you!"
        redirect_to new_user_goal_path(@user)
     else
       render "new"
@@ -24,5 +24,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+ 
+  
+
 
 end 
