@@ -8,7 +8,14 @@
 </head>
 <body>
 
-
+<% if signed_in? %>
+<%= link_to "Users", '#' %>
+<%= link_to "Profile", current_user%>
+<%= link_to "Settings", '#' %>
+<%= link_to "Sign Out", signout_path, method: "delete"%>
+<% else %>
+<%= link_to "Sign in ", signin_path %>
+<% end %>
 <% flash.each do |key, value| %>
 	<span><%= value %></span>
 <% end %>

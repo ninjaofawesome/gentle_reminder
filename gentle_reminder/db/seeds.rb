@@ -8,7 +8,7 @@
     
     users = User.create([{name: 'Honey Boo Boo', email: "honeybooboo@boo.com", password: 'honeybooboo'}, {name: 'Sugar Plum Plum', email: "sugerplumplum@plum.com", password: 'sugarplumplumm'}, {name: 'Salty Pretzel Pretzel', email: "pretzelpretzel@pretzel.com", password: 'pretzelpretzelpretzel'}])
     goals = Goal.create([{goal_type: 'programming_languages', user_id: 1}])
-    programming_languages = ProgrammingLanguage.create([{name: 'Ruby', goal_id: 1}, {name: 'Python', goal_id: 1}, {name: 'HTML/CSS', goal_id: 1}])
+    programming_languages = ProgrammingLanguage.create([{name: 'Ruby'}, {name: 'Python'}, {name: 'HTML/CSS'}])
     tools = Tool.create([{tool_description: 'Code Academy'}, {tool_description: 'Tree House'}])
     charities = Charity.create([{name: 'Save the Bees'}, {name: 'Save the kids'}])
 

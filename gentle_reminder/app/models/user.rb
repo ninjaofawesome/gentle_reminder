@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password
+  attr_accessible :name, :email, :password, :password_confirmation
 	has_many :goals
+	has_secure_password
 
 	validates :name, :presence => true, :length => {:minimum => 2, :maximum => 100}
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -8,10 +9,15 @@ class User < ActiveRecord::Base
 						:length => {:minimum => 5, :maximum => 100},
 						:format => {:with => VALID_EMAIL_REGEX, :message => "Email incorrect!  Try again."},
 						:uniqueness => {:case_sensitive => false}
-	has_secure_password
+	
 	validates :password, :length => {:minimum => 6, :message => "Password must be minimum 6 letters and include a number and one uppercase letter"}
 
-	#work on error message
+	before_save {|user| user.email = email.downcase}
+	before_save :create_remember_token
 
-	#todo: strengthen password!
+	private 
+
+	def create_remember_token
+		self.remember_token = SecureRandom.urlsafe_base64
+	end 
 end
