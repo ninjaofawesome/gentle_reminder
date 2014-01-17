@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20140116231623) do
 
   create_table "programming_languages", :force => true do |t|
     t.string   "name"
-    t.integer  "goal_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
