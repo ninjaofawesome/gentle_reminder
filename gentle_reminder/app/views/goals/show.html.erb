@@ -1,2 +1,8 @@
 I just made a new goal! <br>
 <%= @goal.inspect %>
+<h2> I have courses!</h2>
+<ul>
+  <% @user_courses.each do |course| %>
+    <li><%= course %></li>
+  <% end %>
+</ul>

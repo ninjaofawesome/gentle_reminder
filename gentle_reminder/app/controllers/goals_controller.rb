@@ -1,5 +1,5 @@
+Dir['./model/*.rb'].each {|file| require file}
 
-# require 'debugger'
 class GoalsController < ApplicationController
 
   # def index 
@@ -33,6 +33,8 @@ class GoalsController < ApplicationController
 
   def show
     @goal = Goal.find(params[:id])
+    scraper = Scraper.new('http://www.codecademy.com/gustavo_guimaraes')
+    @user_courses = scraper.get_title
   end
 
 end 
