@@ -11,28 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140117211007) do
+ActiveRecord::Schema.define(:version => 20140122171651) do
 
   create_table "charities", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "goal_id"
+  end
+
+  create_table "goal_types", :force => true do |t|
+    t.string   "goal_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "goals", :force => true do |t|
-    t.string   "goal_type"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
-    t.integer  "user_id"
-    t.integer  "programming_language_id"
-  end
-
-  create_table "programming_languages", :force => true do |t|
-    t.string   "name"
-    t.integer  "goal_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.integer  "goal_id"
+    t.integer  "charity_id"
+  end
+
+  create_table "join_goal_tools", :force => true do |t|
+    t.integer "goal_type_id"
+    t.integer "tool_id"
   end
 
   create_table "tools", :force => true do |t|
