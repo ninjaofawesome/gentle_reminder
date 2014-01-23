@@ -6,11 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
     
-    users = User.create([{name: 'Honey Boo Boo', email: "honeybooboo@boo.com", password: 'honeybooboo'}, {name: 'Sugar Plum Plum', email: "sugerplumplum@plum.com", password: 'sugarplumplumm'}, {name: 'Salty Pretzel Pretzel', email: "pretzelpretzel@pretzel.com", password: 'pretzelpretzelpretzel'}])
-    goals = Goal.create([{goal_type: 'programming_languages', user_id: 1}])
-    programming_languages = ProgrammingLanguage.create([{name: 'Ruby'}, {name: 'Python'}, {name: 'HTML/CSS'}])
+    users = User.create([{name: 'Honey Boo Boo', email: "honeybooboo@boo.com", password: 'honeybooboo'}, {name: 'Sugar Plum Plum', email: "sugerplumplum@plum.com", password: 'sugarplumplumm'}])
+    goals = Goal.create([{user_id: 1, goal_type_id: 1, charity_id: 1}, {user_id: 2, goal_type_id: 1, charity_id: 1}])
+    goal_types = GoalType.create([{name: 'Ruby'}, {name: 'Python'}])
     tools = Tool.create([{tool_description: 'Code Academy'}, {tool_description: 'Tree House'}])
     charities = Charity.create([{name: 'Save the Bees'}, {name: 'Save the kids'}])
-
-
-# Add Data 
+    
+	# tool = Tool.find_by_name("Codecademy")
+	# gt = GoalType.find(1)
+	# gt.tools << tool
+	# gt.save

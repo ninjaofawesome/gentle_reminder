@@ -1,3 +1,4 @@
 class Tool < ActiveRecord::Base
-  belongs_to :programming_language
+  has_many :goal_tools
+  has_many :goal_types, through: :goal_tools
 end
