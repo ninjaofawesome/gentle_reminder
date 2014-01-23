@@ -1,13 +1,13 @@
 GentleReminder::Application.routes.draw do
   resources :users do
-    resources :goals
+    resources :goal_types
   end
 
-  resources :programming_languages
+  # resources :goal_types
 
-  resources :tools
+  # resources :tools
 
-  resources :charities
+  # resources :charities, :only => [:index]
 
   resources :sessions, only: [:new, :create, :destroy]
 

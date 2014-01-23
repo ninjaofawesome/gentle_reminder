@@ -1,3 +1,4 @@
 class Tool < ActiveRecord::Base
-  has_many_and_belongs_to :goal_types
+  has_many :goal_tools
+  has_many :goal_types, through: :goal_tools
 end
