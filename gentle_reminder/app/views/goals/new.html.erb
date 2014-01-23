@@ -1,10 +1,9 @@
 <!-- work on this view together -->
 <h1>Create Your Goal</h1>
 
-<%= form_for([@user, @goal_type]) do |f| %>
+<%= form_for([@user, @goal]) do |f| %>
 <br>
-<% f.label :name %>
-<% f.text_field :name%> 
+
 <%= collection_select(:goal_type, :id, @goal_types, :id, :name) %>
 
 <br>

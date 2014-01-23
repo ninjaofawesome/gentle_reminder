@@ -1,6 +1,7 @@
 GentleReminder::Application.routes.draw do
+
   resources :users do
-    resources :goal_types
+    resources :goals
   end
 
   # resources :goal_types

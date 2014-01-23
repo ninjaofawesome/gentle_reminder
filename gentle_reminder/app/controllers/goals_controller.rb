@@ -10,25 +10,25 @@ class GoalsController < ApplicationController
   # end 
 
   def new
-    # need to work on this view
     @user = User.find(params[:user_id])
-    @goal_type = GoalType.new
+    @goal = Goal.new
+    @goal_types = GoalType.all
     @tools = Tool.all
     @charities = Charity.all
-  end
+  end 
+
 
   def create
-    # debugger
+    #debugger
     user = User.find(params[:user_id])
-    goal_type = user.goal_type.build(:goal_type_id => params[:goal_type][:id])
-    
+    @goal = user.goals.build(:goal_type_id => params[:goal_type][:id])
     if goal.save
-      # debugger
-      redirect_to user_goal_type_path(user, goal_type)
+      debugger
+      redirect_to user_path(@goal)
     else
       render "new"
-    end
-  end
+    end 
+  end 
 
   def show
     @goal = Goal.find(params[:id])
