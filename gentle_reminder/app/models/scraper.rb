@@ -22,3 +22,6 @@ scraper = Scraper.new
 scraper.html.methods
 scraper.get_title
 
+data = html.search("a div")
+//data["href"]
+
