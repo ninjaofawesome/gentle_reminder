@@ -9,6 +9,11 @@ class GoalsController < ApplicationController
   # #    continue to new (render :new)
   # end 
 
+  def index
+    user = User.find(params[:user_id])
+    @goals = user.goal_types
+  end
+
   def new
     @user = User.find(params[:user_id])
     @goal = Goal.new
@@ -21,10 +26,9 @@ class GoalsController < ApplicationController
   def create
     #debugger
     user = User.find(params[:user_id])
-    @goal = user.goals.build(:goal_type_id => params[:goal_type][:id])
+    goal = user.goals.build(:goal_type_id => params[:goal_type][:id])
     if goal.save
-      debugger
-      redirect_to user_path(@goal)
+      redirect_to user_path(user)
     else
       render "new"
     end 
