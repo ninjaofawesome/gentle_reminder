@@ -1,1 +1,5 @@
-<p><%= Goal.all%></p>
+<p><% @goals.each do |goal| %></p>
+
+<%= goal.name %>
+
+<% end %>
