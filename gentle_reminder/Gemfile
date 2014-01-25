@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'debugger'
 gem 'nokogiri'
 
+gem 'omniauth-github'
+gem 'figaro'
 
 # Gems used only for assets and not required
 # in production environments by default.
