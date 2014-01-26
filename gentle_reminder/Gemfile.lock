@@ -149,6 +149,7 @@ DEPENDENCIES
   figaro
   jquery-rails
   nokogiri
+  omniauth
   omniauth-github
   omniauth-meetup
   rails (= 3.2.16)

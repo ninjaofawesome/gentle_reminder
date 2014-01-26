@@ -5,6 +5,9 @@ class SessionsController < ApplicationController
 	end 
 
 	def create 
+		#raise env["omniauth.auth"].to_yaml
+		omniuser = User.from_omniauth(env["omniauth.auth"])
+
 		user = User.find_by_email(params[:session][:email].downcase)
 		if user && user.authenticate(params[:session][:password])
 		sign_in user

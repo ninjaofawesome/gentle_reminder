@@ -15,7 +15,8 @@
 <%= link_to "Sign Out", signout_path, method: "delete"%>
 <% else %>
 <%= link_to "Sign in ", signin_path %> <br>
-<%= link_to "Sing in with Meetup", "/auth/meetup" %> 
+<%= link_to "Sign in with Meetup ", "/auth/meetup" %> <br>
+<%= link_to "Sign in with Github ", "/auth/github" %> <br>
 <% end %>
 <% flash.each do |key, value| %>
 	<span><%= value %></span>
