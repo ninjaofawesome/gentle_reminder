@@ -28,7 +28,7 @@ class GoalsController < ApplicationController
     user = User.find(params[:user_id])
     goal = user.goals.build(:goal_type_id => params[:goal_type][:id])
     if goal.save
-      redirect_to user_path(user)
+      redirect_to user_goals_path(user)
     else
       render "new"
     end 

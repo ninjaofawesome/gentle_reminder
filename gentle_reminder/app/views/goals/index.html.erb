@@ -1,5 +1,13 @@
-<p><% @goals.each do |goal| %></p>
+<h2> MY GOALS</h2>
 
-<%= goal.name %>
+ <p><%= link_to "Create a goal now!", new_user_goal_path %></p>
+ 
+  <%counter = 1%>
+  <p><% @goals.each do |goal| %></p>
 
-<% end %>
+  <%= "#{counter}. #{goal.name}" %>
+
+  <%counter += 1%>
+
+  <% end %>
+
