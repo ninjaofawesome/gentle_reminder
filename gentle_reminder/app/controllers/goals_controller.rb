@@ -11,7 +11,9 @@ class GoalsController < ApplicationController
 
   def index
     user = User.find(params[:user_id])
-    @goals = user.goal_types
+    @goals = user.goals
+    
+    
   end
 
   def new
@@ -20,11 +22,12 @@ class GoalsController < ApplicationController
     @goal_types = GoalType.all
     @tools = Tool.all
     @charities = Charity.all
+    # @money = Goal.find(params[:user_id])
   end 
 
 
   def create
-    #debugger
+    # debugger
     user = User.find(params[:user_id])
     goal = user.goals.build(:goal_type_id => params[:goal_type][:id])
     if goal.save

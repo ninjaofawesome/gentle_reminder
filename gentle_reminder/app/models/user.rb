@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
 	has_many :goals
 	has_many :goal_types, through: :goals
+	has_many :charities, through: :goals
 	has_secure_password
 
 	validates :name, :presence => true, :length => {:minimum => 2, :maximum => 100}
