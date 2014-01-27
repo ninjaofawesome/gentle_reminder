@@ -2,7 +2,22 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
 	has_many :goals
 	has_many :goal_types, through: :goals
+
+	has_many :charities, through: :goals
 	has_secure_password
+
+
+	def self.from_omniauth(auth)
+		where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
+	end
+
+	def self.create_from_omniauth(auth)
+		create! do |user|
+			user.provider = auth["provider"]
+			user.uid = auth["uid"]
+			user.nickname = auth["info"]["nickname"]
+		end
+	end
 
 	validates :name, :presence => true, :length => {:minimum => 2, :maximum => 100}
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
