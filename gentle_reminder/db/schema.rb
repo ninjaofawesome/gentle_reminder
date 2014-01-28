@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140125212652) do
+ActiveRecord::Schema.define(:version => 20140128223114) do
 
   create_table "charities", :force => true do |t|
     t.string   "name"
@@ -31,14 +31,14 @@ ActiveRecord::Schema.define(:version => 20140125212652) do
   end
 
   create_table "goals", :force => true do |t|
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.integer  "user_id"
     t.integer  "goal_type_id"
     t.integer  "charity_id"
     t.integer  "monetary_amount"
-    t.string   "commitments"
-    t.string   "meetups"
+    t.integer  "commitments",     :limit => 255
+    t.integer  "meetups",         :limit => 255
     t.date     "timeframe"
   end
 
@@ -56,6 +56,9 @@ ActiveRecord::Schema.define(:version => 20140125212652) do
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
     t.string   "remember_token"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "nickname"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

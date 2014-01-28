@@ -26,7 +26,7 @@ class GoalsController < ApplicationController
 
   def create
     user = User.find(params[:user_id])
-    goal = user.goals.build(:goal_type_id => params[:goal_type][:id], :charity_id => params[:charity][:id], :monetary_amount => params[:monetary_amount])
+    goal = user.goals.build(:goal_type_id => params[:goal_type][:id], :charity_id => params[:charity][:id], :monetary_amount => params[:monetary_amount], :timeframe => params[:timeframe], :commitments => params[:commitments], :meetups => params[:meetups])
     
     if goal.save
       redirect_to user_goals_path(user)
