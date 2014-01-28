@@ -15,6 +15,10 @@ GentleReminder::Application.routes.draw do
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+  
+  match '/auth/:provider/callback', to: 'session#create'
+  # match '/auth/failure', to: redirect('/')
+  # match '/signout', to: 'sessions#destroy', as: 'signout'
 
   root :to => 'users#new'
   # The priority is based upon order of creation:
