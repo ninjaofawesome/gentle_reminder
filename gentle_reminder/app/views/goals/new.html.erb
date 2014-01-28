@@ -10,7 +10,7 @@
 <%= collection_select(:tool, :id, @tools, :id, :tool_description) %>
 <br>
 <%= collection_select(:charity, :id, @charities, :id, :name) %>
-
+<%= text_field_tag :monetary_amount %>
 
 <%= f.submit %>
 

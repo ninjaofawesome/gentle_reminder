@@ -5,7 +5,7 @@
   <%counter = 1%>
   <p><% @goals.each do |goal| %></p>
 
-  <%= "#{counter}. #{goal.goal_type.name}"  %>
+  <%= "#{counter}. #{goal.goal_type.name} #{goal.charity.name} #{goal.monetary_amount} " %>
 
   <%counter += 1%>
 
