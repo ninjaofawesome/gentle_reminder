@@ -9,7 +9,8 @@ gem 'sqlite3'
 gem 'debugger'
 # gem 'nokogiri'
 
-#gem 'omniauth'
+
+# gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-meetup'
 gem 'figaro'

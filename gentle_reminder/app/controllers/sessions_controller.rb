@@ -4,15 +4,19 @@ class SessionsController < ApplicationController
 
 	end 
 
-	def create 
+	def create
+		#pseudocode
+		#if this person is signing in from omniauth do this
+		#if this person is signing in from email do that
 		#raise env["omniauth.auth"].to_yaml
-		user = user.from_omniauth(env["omniauth.auth"]);
+		user = User.from_omniauth(env["omniauth.auth"]);
 		if user
-			session[:user_id] = user.user_id
-			redirect_to root_url, notice: 'sign_in'
+			sign_in user 
+			session[:user_id] = user.uid
+			redirect_to user_goals_path(user)
 		else
 			user = User.find_by_email(params[:session][:email].downcase)
-			if user && user.authenticate(params[:session][:password])
+			if user #&& user.authenticate(params[:session][:password])
 			sign_in user
 			redirect_to user_goals_path(user)
 			else
@@ -25,6 +29,5 @@ class SessionsController < ApplicationController
 	def destroy
 		sign_out
 		redirect_to root_url
-
 	end 
 end

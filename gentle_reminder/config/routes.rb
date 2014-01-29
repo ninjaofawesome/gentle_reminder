@@ -4,21 +4,15 @@ GentleReminder::Application.routes.draw do
     resources :goals
   end
 
-  # resources :goal_types
-
-  # resources :tools
-
-  # resources :charities, :only => [:index]
-
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   
-  match '/auth/:provider/callback', to: 'session#create'
-  # match '/auth/failure', to: redirect('/')
-  # match '/signout', to: 'sessions#destroy', as: 'signout'
+  match '/auth/:provider/callback/', to: 'sessions#create'
+  match '/auth/failure', to: redirect('/')
+  match '/signout', to: 'sessions#destroy', as: 'signout'
 
   root :to => 'users#new'
   # The priority is based upon order of creation:

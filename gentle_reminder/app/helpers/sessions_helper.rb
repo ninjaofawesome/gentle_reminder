@@ -5,6 +5,7 @@ module SessionsHelper
 	end 
 
 	def signed_in?
+		#either someone is signed in via email or omniauth
 		!current_user.nil?
 	end 
 
@@ -21,3 +22,5 @@ module SessionsHelper
 		cookies.delete(:remember_token)
 	end 
 end
+
+# User id: 31, name: "fdogarro", email: nil, password: nil, created_at: "2014-01-29 16:00:59", updated_at: "2014-01-29 16:00:59", password_digest: nil, remember_token: "p9m3xnrHBJCHdGdCS23Yzg", provider: "github", uid: "2686623", nickname: nil>

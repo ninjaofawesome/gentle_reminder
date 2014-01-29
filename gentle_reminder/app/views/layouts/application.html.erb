@@ -9,7 +9,7 @@
 <body>
 
 <% if signed_in? %>
-<%= link_to "Sign Out", signout_path, method: "delete"%>
+  <%= link_to "Sign Out", signout_path, method: "delete"%>
 <% else %>
 <%= link_to "Sign in ", signin_path %> <br>
 <%= link_to "Sign in with Github ", "/auth/github" %> <br>
@@ -23,3 +23,5 @@
 
 </body>
 </html>
+
+<!-- method: "delete" -->
