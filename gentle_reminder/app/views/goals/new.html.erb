@@ -15,34 +15,34 @@
 <%= collection_select(:tool, :id, @tools, :id, :tool_description) %>
 <br>
 <h3>How long will it take you to reach your goal?</h3>
-<%= label_tag "One Month" %>
-<%= check_box_tag(:timeframe, "1 month") %>
-<%= label_tag "Three Months" %>
-<%= check_box_tag(:timeframe, "3 months") %>
-<%= label_tag "Six Months" %>
-<%= check_box_tag(:timeframe, "6 months") %>
+<%= label_tag "Thirty Days" %>
+<%= radio_button_tag(:timeframe, "30") %>
+<%= label_tag "Ninety Days" %>
+<%= radio_button_tag(:timeframe, "90") %>
+<%= label_tag "One Hundred Eighty Days" %>
+<%= radio_button_tag(:timeframe, "180") %>
 <br>
 <h4>If you're planning on using Github, how many commits will you need to meet your goal?</h4>
 <%= label_tag "10 Commits" %>
-<%= check_box_tag(:commitments, 10) %>
+<%= radio_button_tag(:commitments, 10) %>
 <%= label_tag "25 commits" %>
-<%= check_box_tag(:commitments, 25) %>
+<%= radio_button_tag(:commitments, 25) %>
 <%= label_tag "50 commits" %>
-<%= check_box_tag(:commitments, 50) %>
+<%= radio_button_tag(:commitments, 50) %>
 <%= label_tag "100 commits" %>
-<%= check_box_tag(:commitments, 100) %>
+<%= radio_button_tag(:commitments, 100) %>
 <br>
 <h4>If you're planning on going to Meetups, how many Meetups will you need to meet your goals?</h4>
 <p>(Please note, this is per Meetup group you choose.)
 <br>
 <%= label_tag "1 Meetup" %>
-<%= check_box_tag(:meetups, 1) %>
+<%= radio_button_tag(:meetups, 1) %>
 <%= label_tag "3 Meetups" %>
-<%= check_box_tag(:meetups, 3) %>
+<%= radio_button_tag(:meetups, 3) %>
 <%= label_tag "6 Meetups" %>
-<%= check_box_tag(:meetups, 6) %>
+<%= radio_button_tag(:meetups, 6) %>
 <%= label_tag "10 Meetups" %>
-<%= check_box_tag(:meetups, 10) %>
+<%= radio_button_tag(:meetups, 10) %>
 <br>
 <h3>What charity would you like to donate to?</h3>
 <p>(Please note, if you complete your goal, 10% plus processing fees will be donated.)
@@ -51,11 +51,11 @@
 <br>
 <h3>How much will you put on the line in order to meet your goal?</h3>
 <%= label_tag "$100" %>
-<%= check_box_tag(:monetary_amount, "100") %>
+<%= radio_button_tag(:monetary_amount, "100") %>
 <%= label_tag "$250" %>
-<%= check_box_tag(:monetary_amount, "250") %>
+<%= radio_button_tag(:monetary_amount, "250") %>
 <%= label_tag "$500" %>
-<%= check_box_tag(:monetary_amount, "500") %>
+<%= radio_button_tag(:monetary_amount, "500") %>
 
 <br>
 <br>

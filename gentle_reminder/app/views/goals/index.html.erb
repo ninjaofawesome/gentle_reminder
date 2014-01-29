@@ -8,6 +8,9 @@
   	<li style= "list-style-type:none; font-weight: 700;"><%= "#{counter}. #{goal.goal_type.name}" %></li>
   	<li style= "list-style-type:none;">My Charity:<%= " #{goal.charity.name}" %></li>
   	<li style= "list-style-type:none;">My Pledge:<%= " #{goal.monetary_amount} " %></li>
+  	<li style= "list-style-type:none;">Finish Date:<%= " #{goal.timeframe} " %></li>
+  	<li style= "list-style-type:none;">My Commits:<%= " #{goal.commitments} " %></li>
+  	<li style= "list-style-type:none;">My Meetups:<%= " #{goal.meetups} " %></li>
   </ul>
   <%counter += 1%>
 
