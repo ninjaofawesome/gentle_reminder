@@ -9,12 +9,12 @@ gem 'sqlite3'
 gem 'debugger'
 # gem 'nokogiri'
 
-<<<<<<< HEAD
+
 
 # gem 'omniauth'
-=======
->>>>>>> c13f59a607f2701c6d457af56d58501f06df7968
+
 gem 'omniauth-github'
+gem 'omniauth-meetup'
 gem 'figaro'
 
 # Gems used only for assets and not required
