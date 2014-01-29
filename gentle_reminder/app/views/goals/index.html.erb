@@ -3,10 +3,15 @@
  <p><%= link_to "Create a goal now!", new_user_goal_path %></p>
  
   <%counter = 1%>
-  <p><% @goals.each do |goal| %></p>
-
-  <%= "#{counter}. #{goal.goal_type.name} #{goal.charity.name} #{goal.monetary_amount} " %>
-
+  <% @goals.each do |goal| %>
+  <ul>
+  	<li style= "list-style-type:none; font-weight: 700;"><%= "#{counter}. #{goal.goal_type.name}" %></li>
+  	<li style= "list-style-type:none;">My Charity:<%= " #{goal.charity.name}" %></li>
+  	<li style= "list-style-type:none;">My Pledge:<%= " #{goal.monetary_amount} " %></li>
+  	<li style= "list-style-type:none;">Finish Date:<%= " #{goal.timeframe} " %></li>
+  	<li style= "list-style-type:none;">My Commits:<%= " #{goal.commitments} " %></li>
+  	<li style= "list-style-type:none;">My Meetups:<%= " #{goal.meetups} " %></li>
+  </ul>
   <%counter += 1%>
 
   <% end %>

@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20140126233212) do
+=======
+ActiveRecord::Schema.define(:version => 20140128223114) do
+>>>>>>> c13f59a607f2701c6d457af56d58501f06df7968
 
   create_table "charities", :force => true do |t|
     t.string   "name"
@@ -31,14 +35,14 @@ ActiveRecord::Schema.define(:version => 20140126233212) do
   end
 
   create_table "goals", :force => true do |t|
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.integer  "user_id"
     t.integer  "goal_type_id"
     t.integer  "charity_id"
     t.integer  "monetary_amount"
-    t.string   "commitments"
-    t.string   "meetups"
+    t.integer  "commitments",     :limit => 255
+    t.integer  "meetups",         :limit => 255
     t.date     "timeframe"
   end
 

@@ -25,8 +25,10 @@ class GoalsController < ApplicationController
 
 
   def create
+    future_date = Date.today + params[:timeframe].to_i.days
+    test = future_date.strftime("%d%m%Y")
     user = User.find(params[:user_id])
-    goal = user.goals.build(:goal_type_id => params[:goal_type][:id], :charity_id => params[:charity][:id], :monetary_amount => params[:monetary_amount])
+    goal = user.goals.build(:goal_type_id => params[:goal_type][:id], :charity_id => params[:charity][:id], :monetary_amount => params[:monetary_amount], :timeframe => test, :commitments => params[:commitments], :meetups => params[:meetups])
     
     if goal.save
       redirect_to user_goals_path(user)

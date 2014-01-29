@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
 	end 
 
+<<<<<<< HEAD
 	def create
 		#pseudocode
 		#if this person is signing in from omniauth do this
@@ -23,6 +24,16 @@ class SessionsController < ApplicationController
 				flash[:error]= "Invalid email or password"
 				render 'new'
 			end
+=======
+	def create 
+		user = User.find_by_email(params[:session][:email].downcase)
+		if user && user.authenticate(params[:session][:password])
+		sign_in user
+		redirect_to user_goals_path(user)
+		else
+			flash[:error]= "Invalid email or password"
+			render 'new'
+>>>>>>> c13f59a607f2701c6d457af56d58501f06df7968
 		end 
 	end 
 
