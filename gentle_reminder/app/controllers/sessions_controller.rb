@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 		#pseudocode
 		#if this person is signing in from omniauth do this
 		#if this person is signing in from email do that
-		#raise env["omniauth.auth"].to_yaml
+		# raise env["omniauth.auth"].to_yaml
 		# debugger
 		if params[:session]
 			# debugger
