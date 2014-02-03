@@ -23,6 +23,8 @@ class SessionsController < ApplicationController
 			# end
 		else 
 			user = User.from_omniauth(env["omniauth.auth"])
+			github_data = Github.new(user)
+			debugger
 			sign_in user 
 			session[:user_id] = user.uid
 			redirect_to user_goals_path(user)

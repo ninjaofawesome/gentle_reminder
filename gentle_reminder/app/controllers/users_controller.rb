@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
-
-	def index 
-  	# log in page
-    #   If user exists go to show page (render :show)
-    #   Else
-    #    continue to new (render :new)
-	end 
+# client = Octokit::Client.new :login => 'defunkt', :password => 'c0d3b4ssssss!'
+# # Fetch the current user
+# client.user
 
   def new
     @user = User.new
