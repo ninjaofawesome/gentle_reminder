@@ -15,9 +15,10 @@ class GoalsController < ApplicationController
     github = Github.new(user)
     @goals_array = []
     @goals.each do |goal|
+      @date = goal.format_date(goal.timeframe)
       @user_commits = github.count_commits(goal.repo, "master", goal.created_at)
       @weekly_commits = github.track_weekly_commits(goal.repo, "master")
-      @goals_array << {:commits => @user_commits, :goal_key => goal}
+      @goals_array << {:date => @date, :commits => @user_commits, :goal_key => goal}
     end  
     # [{:commits => 3, :goal_key => goal}, {:commits => 3, :goal_key => goal} ]
     

@@ -8,7 +8,7 @@
   	<li style= "list-style-type:none; font-weight: 700;"><%= counter%></li>
   	<li style= "list-style-type:none;">My Charity:<%= goal_hash[:goal_key].charity.name%></li>
   	<li style= "list-style-type:none;">My Pledge:<%= goal_hash[:goal_key].monetary_amount %></li>
-  	<li style= "list-style-type:none;">Finish Date:<%= goal_hash[:goal_key].timeframe %></li>
+  	<li style= "list-style-type:none;">Finish Date:<%= goal_hash[:date] %></li>
   	<li style= "list-style-type:none;">My Commits:<%= goal_hash[:goal_key].commitments %></li>
     <li style= "list-style-type:none;">Commits So Far:<%= goal_hash[:commits] %></li>
   	<li style= "list-style-type:none;">My Meetups:<%= goal_hash[:goal_key].meetups %></li>
