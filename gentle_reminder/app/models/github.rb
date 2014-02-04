@@ -16,9 +16,10 @@ class Github
     self.client.commits(build_repo_name(repo), branch, {:since => date})
   end
 
-  def count_commits
-    commits.size
+  def count_commits(repo, branch="master", date)
+    commits(repo, branch, date).size
   end
+
 
   #other Octokit methods here like get.data
 end

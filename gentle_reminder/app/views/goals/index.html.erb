@@ -3,14 +3,15 @@
  <p><%= link_to "Create a goal now!", new_user_goal_path %></p>
  
   <%counter = 1%>
-  <% @goals.each do |goal| %>
+  <% @goals_array.each do |goal_hash| %>
   <ul>
-  	<li style= "list-style-type:none; font-weight: 700;"><%= "#{counter}. #{goal.goal_type.name}" %></li>
-  	<li style= "list-style-type:none;">My Charity:<%= " #{goal.charity.name}" %></li>
-  	<li style= "list-style-type:none;">My Pledge:<%= " #{goal.monetary_amount} " %></li>
-  	<li style= "list-style-type:none;">Finish Date:<%= " #{goal.timeframe} " %></li>
-  	<li style= "list-style-type:none;">My Commits:<%= " #{goal.commitments} " %></li>
-  	<li style= "list-style-type:none;">My Meetups:<%= " #{goal.meetups} " %></li>
+  	<li style= "list-style-type:none; font-weight: 700;"><%= counter%></li>
+  	<li style= "list-style-type:none;">My Charity:<%= goal_hash[:goal_key].charity.name%></li>
+  	<li style= "list-style-type:none;">My Pledge:<%= goal_hash[:goal_key].monetary_amount %></li>
+  	<li style= "list-style-type:none;">Finish Date:<%= goal_hash[:goal_key].timeframe %></li>
+  	<li style= "list-style-type:none;">My Commits:<%= goal_hash[:goal_key].commitments %></li>
+    <li style= "list-style-type:none;">Commits So Far:<%= goal_hash[:commits] %></li>
+  	<li style= "list-style-type:none;">My Meetups:<%= goal_hash[:goal_key].meetups %></li>
   </ul>
   <%counter += 1%>
 

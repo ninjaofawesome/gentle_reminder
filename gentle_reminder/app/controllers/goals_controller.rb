@@ -11,7 +11,15 @@ class GoalsController < ApplicationController
 
   def index
     user = User.find(params[:user_id])
-    @goals = user.goals  
+    @goals = user.goals 
+    github = Github.new(user)
+    @user_commits = github.count_commits("assessment2_sinatra", "master", Date.today - 180.days)
+    @goals_array = []
+    @goals.each do |goal|
+      @goals_array << {:commits => @user_commits, :goal_key => goal}
+    end  
+    # [{:commits => 3, :goal_key => goal}, {:commits => 3, :goal_key => goal} ]
+    
   end
 
   def new
@@ -26,7 +34,6 @@ class GoalsController < ApplicationController
 
   def create
     future_date = Date.today + params[:timeframe].to_i.days
-    test = future_date.strftime("%d%m%Y")
     user = User.find(params[:user_id])
     goal = user.goals.build(:goal_type_id => params[:goal_type][:id], :charity_id => params[:charity][:id], :monetary_amount => params[:monetary_amount], :timeframe => future_date, :commitments => params[:commitments], :meetups => params[:meetups])
     
