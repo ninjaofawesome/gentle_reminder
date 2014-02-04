@@ -1,12 +1,19 @@
 <h1> Sign In </h1>
-
-<%= form_for(:session, url: sessions_path) do |f| %>
-	<%= f.label :email %>
-  <%= f.text_field :email %>
-
-  <%= f.label :password %>
- 	<%= f.password_field :password %>
-
-  <%= f.submit "Sign in"%>
-<% end %>
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+<div class = "sign-in-left-col">
+	<div class = "emphasis-box">
+		<%= form_for(:session, url: sessions_path) do |f| %>
+		<div class = "bump">
+			<%= f.label :email %>
+		</div>
+		  <%= f.text_field :email %>
+		<div class = "bump">
+		  <%= f.label :password %>
+		</div>
+		 	<%= f.password_field :password %>
+		<div class = "button-bump">
+		  <%= f.submit "Sign in"%>
+		<% end %>
+	</div>
+		<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+	</div>
+</div>

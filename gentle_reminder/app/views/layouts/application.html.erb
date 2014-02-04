@@ -8,18 +8,28 @@
 </head>
 <body>
 
-<% if signed_in? %>
-  <%= link_to "Sign Out", signout_path, method: "delete"%>
-<% else %>
-<%= link_to "Sign in ", signin_path %>
-<br>
-<%= link_to "Sign in with Github ", "/auth/github" %>
-<br>
-<%= link_to "Sign in with Meetup", "/auth/meetup" %>
-<% end %>
-<% flash.each do |key, value| %>
-	<span><%= value %></span>
-<% end %>
+<div class = "header">
+	<h1 class = "title">Gentle Reminder!</h1>
+</div>
+
+
+	<div class = "sign-in-right-col">
+		<h1>Welcome Back!</h1>
+			<h2>Sign In Here</h1>
+			<% if signed_in? %>
+			  <%= link_to "Sign Out", signout_path, method: "delete"%>
+			<% else %>
+			<%= link_to "Sign in ", signin_path %>
+			<br>
+			<%= link_to "Sign in with Github ", "/auth/github" %>
+			<br>
+			<%= link_to "Sign in with Meetup", "/auth/meetup" %>
+			<% end %>
+			<% flash.each do |key, value| %>
+				<span><%= value %></span>
+			<% end %>
+	</div>
+
 
 <%= yield %>
 

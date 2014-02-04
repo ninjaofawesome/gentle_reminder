@@ -1,0 +1,194 @@
+// COLORS
+$cool-white: #f0ffff;
+$gray-green: #6a7f78;
+$light-aqua: #88FFD4;
+$mint-green: #d4fff0;
+$deep-teal: #447f6a;
+$cool-gray-green: #AACCC0;
+
+//COLUMNS:
+$col-1: 8.32%;
+$col-2: 16.65%;
+$col-3: 24.97%;
+$col-4: 33.3%;
+$col-5: 41.62%;
+$col-6: 49.95%;
+$col-7: 58.27%;
+$col-8: 66.59%;
+$col-9: 74.92%;
+$col-10: 83.24%;
+$col-11: 91.57%;
+$col-12: 99.89%;
+$col-margin: 1%;
+
+// BUTTON STYLING
+
+$button-padding: 5px 10px;
+$button-font: 1.5em;
+
+// FONT STUFF
+
+$extra-thin: 300;
+$thin: 500;
+$bold: 700;
+$extra-bold: 900;
+
+// @font-family($font){
+// 	font-family: 'porter sans';
+// 	src: url(/fonts/portersans/porter-sans-inline-block-webfont.ttf);
+// }
+
+// TITLE
+$title-font: 500%;
+
+
+// BORDERS
+$outline: 2px;
+
+// GENERAL
+body {
+	background-color: $cool-white;
+	color: $gray-green;
+	line-height: 1.2em;
+	font-size: 1em;
+	font-family: helvetica, arial, sans-serif;
+} 
+
+a {
+	color: $deep-teal;
+}
+
+a:hover {
+	color: $light-aqua;
+}
+
+a:focus {
+	color: $light-aqua;
+}
+
+a:visited {
+	color: $cool-gray-green;
+}
+
+//CONTAINERS
+
+.container{
+	overflow: hidden;
+	width: $col-12;
+	background-color: red;
+}
+
+.header {
+	background-color: $mint-green;
+	height: 10%;
+	width: $col-10;
+	padding: 1%;
+	margin-left: 8.35%;
+	text-align: center;
+
+}
+
+.left-col {
+	border-radius: $outline;
+	width: $col-6;
+	margin-right: $col-margin;
+	height: 40%;
+	margin: 5% 0;
+	float: left;
+}
+
+.right-col {
+	border-radius: $outline;
+	width: $col-6;
+	height: 40%;
+	margin: 5% 0;
+	float: right;
+
+}
+
+.sign-in-left-col {
+	width: $col-5;
+	margin-right: $col-margin;
+	margin-top: 5%;
+	height: 40%;
+	float: left;
+
+}
+
+.sign-in-right-col {
+	width: $col-5;
+	margin-left: $col-margin;
+	margin-top: 5%;
+	height: 40%;
+	float: right;
+
+}
+// INPUT STYLING
+
+label{
+	font-weight: $thin;
+	font-size: $button-font;
+	color: $deep-teal;
+}
+
+input[type=submit] {
+	display: block;
+	background-color: $deep-teal;
+	color: $mint-green;
+	border: none;
+	padding: $button-padding;
+	font-size: $button-font;
+	font-weight: $extra-bold;
+	border: $gray-green;
+	border-radius: $outline;
+}
+
+input[type=text]{
+	background-color: $cool-white;
+	border: 2px solid $gray-green;
+	border-radius: $outline;
+	font-size: $button-font;
+	text-align: center;
+
+}
+
+input[type=password]{
+	background-color: $cool-white;
+	border: 2px solid $gray-green;
+	border-radius: $outline;
+	font-size: $button-font;
+	text-align: center;
+
+}
+
+//SPACING AND TWEAKS
+.bump {
+	margin-top: 1%;
+}
+
+.moveit-left {
+	margin-left: 10%;
+}
+
+.header-align {
+	text-align:center;
+}
+
+
+
+// TITLE
+
+h1.title {
+	font-size: $title-font;
+	font-weight: $extra-bold;
+	color: $deep-teal;
+	line-height: 100%;
+}
+
+//BOXES
+.emphasis-box {
+	background-color: $cool-gray-green;
+	padding: 2%;
+	border-radius: $outline;
+}
+
