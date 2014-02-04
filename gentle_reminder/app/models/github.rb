@@ -20,6 +20,16 @@ class Github
     commits(repo, branch, date).size
   end
 
+  def track_weekly_commits(repo, branch="master")
+    commits(repo, branch, Date.today - 7.days).size
+  end
+
+  def send_weekly_commits(repo, branch="master")
+    if Date.today - goal.created_at >= 7.days
+      track_weekly_commits(repo, branch)
+    end 
+  end 
+
 
   #other Octokit methods here like get.data
 end

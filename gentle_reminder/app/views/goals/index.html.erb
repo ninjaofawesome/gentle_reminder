@@ -13,6 +13,9 @@
     <li style= "list-style-type:none;">Commits So Far:<%= goal_hash[:commits] %></li>
   	<li style= "list-style-type:none;">My Meetups:<%= goal_hash[:goal_key].meetups %></li>
   </ul>
+  <ul>
+    <li style= "list-style-type:none;"><%= @weekly_commits%> </li>
+  </ul>
   <%counter += 1%>
 
   <% end %>
