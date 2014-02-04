@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
 	    user.provider = auth["provider"]
 	    user.uid = auth["uid"]
 	    user.github_token = auth.credentials.token
-	    user.name = auth["info"]["nickname"]
+	    user.github_name = auth["info"]["nickname"]
   	end
 	end
 
