@@ -1,21 +1,29 @@
-<h1>Sign up!</h1>
+<div class = "header">
+	<h1 class = "title">WELCOME TO GENTLE REMINDER</h1>
+</div>
 
-<%= form_for(@user) do |f| %>
-<br>
-<%= render 'shared/error_messages' %>
-<%=f.label :name %>
-<%=f.text_field :name%> 
-<br>
-<%=f.label :email %>
-<%=f.text_field :email%> 
-<br>
-<%=f.label :password %>
-<%=f.password_field :password%> 
-<br>
-<!-- make password_conf work -->
-<%=f.label :password_confirmation %>
-<%=f.password_field :password%>
-<br>
-<%= f.submit "Create Account" %>
+<div class = "container">
+	<div class= "sign-in-left-col emphasis-box">
+		<h1>Sign up!</h1>
+
+		<%= form_for(@user) do |f| %>
+		<br>
+		<%= render 'shared/error_messages' %>
+		<%=f.label :name %>
+		<%=f.text_field :name%> 
+		<br>
+		<%=f.label :email %>
+		<%=f.text_field :email%> 
+		<br>
+		<%=f.label :password %>
+		<%=f.password_field :password%> 
+		<br>
+		<!-- make password_conf work -->
+		<%=f.label :password_confirmation %>
+		<%=f.password_field :password%>
+		<br>
+		<%= f.submit "Create Account" %>
+	</div>
+</div>
 
 <%end%>
