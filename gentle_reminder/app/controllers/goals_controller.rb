@@ -15,10 +15,17 @@ class GoalsController < ApplicationController
     github = Github.new(user)
     @goals_array = []
     @goals.each do |goal|
-      @date = goal.format_date(goal.timeframe)
-      @user_commits = github.count_commits(goal.repo, "master", goal.created_at)
-      @weekly_commits = github.track_weekly_commits(goal.repo, "master")
-      @goals_array << {:date => @date, :commits => @user_commits, :goal_key => goal}
+      # debugger
+      #kitty_cat = github.commits("kitty_cat", "master", goal.created_at)
+      if github.commits(goal.repo, "master", goal.created_at) != nil
+        @date = goal.format_date(goal.timeframe)
+        @user_commits = github.count_commits(goal.repo, "master", goal.created_at)
+        @weekly_commits = github.track_weekly_commits(goal.repo, "master")
+        @goals_array << {:date => @date, :commits => @user_commits, :goal_key => goal}
+      else
+        #alert "wrong!" redirect to goal.new
+         redirect_to user_goals_path(user)
+      end
     end  
     # [{:commits => 3, :goal_key => goal}, {:commits => 3, :goal_key => goal} ]
     
