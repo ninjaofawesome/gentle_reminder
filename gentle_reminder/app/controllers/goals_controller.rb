@@ -19,7 +19,6 @@ class GoalsController < ApplicationController
       @weekly_commits = github.track_weekly_commits(goal.repo, "master")
       @goals_array << {:commits => @user_commits, :goal_key => goal}
     end  
-    # [{:commits => 3, :goal_key => goal}, {:commits => 3, :goal_key => goal} ]
     
   end
 
