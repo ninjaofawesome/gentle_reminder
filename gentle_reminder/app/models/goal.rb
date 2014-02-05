@@ -11,4 +11,5 @@ class Goal < ActiveRecord::Base
     month = date.to_s.gsub(regex, Date::MONTHNAMES[$2.to_i])
     " " + month + " " + date_array[2] + ", " + date_array[0]
   end
+
 end
