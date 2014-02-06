@@ -9,17 +9,17 @@
   <% @goals_array.each do |goal_hash| %>
   <ul>
   	<li style= "list-style-type:none; font-weight: 700;"><%= counter%></li>
-  	<li style= "list-style-type:none;">My Charity:<%= goal_hash[:goal_key].charity.name%></li>
-  	<li style= "list-style-type:none;">My Pledge:<%= goal_hash[:goal_key].monetary_amount %></li>
-  	<li style= "list-style-type:none;">Finish Date:<%= goal_hash[:date] %></li>
-  	<li style= "list-style-type:none;">My Commits:<%= goal_hash[:goal_key].commitments %></li>
-    <li style= "list-style-type:none;">Commits So Far:<%= goal_hash[:commits] %></li>
-  	<li style= "list-style-type:none;">My Meetups:<%= goal_hash[:goal_key].meetups %></li>
+  	<li style= "list-style-type:none;">My Charity: <%= goal_hash[:goal_key].charity.name%></li>
+  	<li style= "list-style-type:none;">My Pledge: <%= goal_hash[:goal_key].monetary_amount %></li>
+  	<li style= "list-style-type:none;">Finish Date: <%= goal_hash[:date] %></li>
+  	<li style= "list-style-type:none;">My Commits: <%= goal_hash[:goal_key].commitments %></li>
+    <li style= "list-style-type:none;">Commits So Far: <%= goal_hash[:commits] %></li>
+  	<li style= "list-style-type:none;">My Meetups: <%= goal_hash[:goal_key].meetups %></li>
   </ul>
   <ul>
   
     <li style= "list-style-type:none;">Repo Name: <%= goal_hash[:goal_key].repo%> </li>
-    <li style= "list-style-type:none;"> Past week commits(not really working): <%= @weekly_commits%> </li>
+    <li style= "list-style-type:none;"> Past week commits: <%= @weekly_commits%> </li>
   </ul>
   <%counter += 1%>
 
