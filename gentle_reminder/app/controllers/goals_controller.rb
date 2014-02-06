@@ -2,33 +2,27 @@ Dir['./model/*.rb'].each {|file| require file}
 
 class GoalsController < ApplicationController
 
-  # def index 
-  #   # log in page
-  # #   If user exists go to show page (render :show)
-  # #   Else
-  # #    continue to new (render :new)
-  # end 
-
   def index
     user = User.find(params[:user_id])
-    @goals = user.goals 
+    goals = user.goals 
     github = Github.new(user)
     @goals_array = []
-    @goals.each do |goal|
-      # debugger
-      #kitty_cat = github.commits("kitty_cat", "master", goal.created_at)
-      if github.commits(goal.repo, "master", goal.created_at) != nil
-        @date = goal.format_date(goal.timeframe)
-        @user_commits = github.count_commits(goal.repo, "master", goal.created_at)
-        @weekly_commits = github.track_weekly_commits(goal.repo, "master")
-        @goals_array << {:date => @date, :commits => @user_commits, :goal_key => goal}
+
+    goals.each do |goal|
+      repo = goal.remove_whitespace
+      commits = github.commits(repo, "master", goal.created_at)
+      if commits.class == TrueClass
+        goal.destroy
+        redirect_to user_goals_path(user)
+        flash[:error]= "Invalid repo, please try again."
       else
-        #alert "wrong!" redirect to goal.new
-         redirect_to user_goals_path(user)
+        date = goal.format_date(goal.timeframe)
+        user_commits = github.count_commits(repo, "master", goal.created_at)
+        weekly_commits = github.track_weekly_commits(repo, "master")
+        @goals_array << {:date => @date, :commits => @user_commits, :goal_key => goal}
       end
-    end  
-    # [{:commits => 3, :goal_key => goal}, {:commits => 3, :goal_key => goal} ]
-    
+    end
+
   end
 
   def new
@@ -53,11 +47,11 @@ class GoalsController < ApplicationController
     end 
   end 
 
-  def show
-    @goal = Goal.find(params[:id])
-    scraper = Scraper.new('http://www.codecademy.com/gustavo_guimaraes')
-    @user_courses = scraper.get_title
-  end
+  # def show
+  #   @goal = Goal.find(params[:id])
+  #   scraper = Scraper.new('http://www.codecademy.com/gustavo_guimaraes')
+  #   @user_courses = scraper.get_title
+  # end
 
 end 
 

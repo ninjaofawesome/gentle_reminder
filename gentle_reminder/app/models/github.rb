@@ -1,6 +1,6 @@
 class Github
 
-  attr_reader :client, :user
+  attr_reader :client, :user, :stack
 
   def initialize(user) 
     @client = Octokit::Client.new :access_token => user.github_token
@@ -13,7 +13,11 @@ class Github
   end
 
   def commits(repo, branch="master", date)
+    begin
     self.client.commits(build_repo_name(repo), branch, {:since => date})
+    rescue Octokit::Error => e
+      Rails.logger.error
+    end
   end
 
   def count_commits(repo, branch="master", date)
@@ -30,6 +34,4 @@ class Github
     end 
   end 
 
-
-  #other Octokit methods here like get.data
 end
