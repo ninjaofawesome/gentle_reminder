@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140204153102) do
+ActiveRecord::Schema.define(:version => 20140206121238) do
 
   create_table "charities", :force => true do |t|
     t.string   "name"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20140204153102) do
     t.string   "nickname"
     t.string   "github_token"
     t.string   "github_name"
+    t.string   "login"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

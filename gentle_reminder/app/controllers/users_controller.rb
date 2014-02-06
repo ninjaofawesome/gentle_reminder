@@ -11,6 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
        flash[:success] = "Hooray!  Welcome to a new you!"
+       #Tells mailer to send a email after user is saved
+       User.Mailer.welcome_email(@user).deliver
        redirect_to user_path(@user)
     else
       render "new"
