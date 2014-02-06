@@ -17,15 +17,15 @@ class GoalsController < ApplicationController
     @goals.each do |goal|
       # debugger
       #kitty_cat = github.commits("kitty_cat", "master", goal.created_at)
-      if github.commits(goal.repo, "master", goal.created_at) != nil
+      # if github.commits(goal.repo, "master", goal.created_at) != nil
         @date = goal.format_date(goal.timeframe)
         @user_commits = github.count_commits(goal.repo, "master", goal.created_at)
         @weekly_commits = github.track_weekly_commits(goal.repo, "master")
         @goals_array << {:date => @date, :commits => @user_commits, :goal_key => goal}
-      else
-        #alert "wrong!" redirect to goal.new
-         redirect_to user_goals_path(user)
-      end
+      # else
+      #   #alert "wrong!" redirect to goal.new
+      #    redirect_to user_goals_path(user)
+      # end
     end  
     
   end
@@ -52,11 +52,11 @@ class GoalsController < ApplicationController
     end 
   end 
 
-  def show
-    @goal = Goal.find(params[:id])
-    scraper = Scraper.new('http://www.codecademy.com/gustavo_guimaraes')
-    @user_courses = scraper.get_title
-  end
+  # def show
+  #   @goal = Goal.find(params[:id])
+  #   scraper = Scraper.new('http://www.codecademy.com/gustavo_guimaraes')
+  #   @user_courses = scraper.get_title
+  # end
 
 end 
 

@@ -30,6 +30,4 @@ class Github
     end 
   end 
 
-
-  #other Octokit methods here like get.data
 end
