@@ -7,6 +7,7 @@ class GoalsController < ApplicationController
     goals = user.goals 
     github = Github.new(user)
     @goals_array = []
+
     goals.each do |goal|
       repo = goal.remove_whitespace
       commits = github.commits(repo, "master", goal.created_at)
@@ -21,6 +22,7 @@ class GoalsController < ApplicationController
         @goals_array << {:date => date, :commits => user_commits, :goal_key => goal}
       end
     end
+
   end
 
   def new
@@ -44,11 +46,11 @@ class GoalsController < ApplicationController
     end 
   end 
 
-  def show
-    @goal = Goal.find(params[:id])
-    scraper = Scraper.new('http://www.codecademy.com/gustavo_guimaraes')
-    @user_courses = scraper.get_title
-  end
+  # def show
+  #   @goal = Goal.find(params[:id])
+  #   scraper = Scraper.new('http://www.codecademy.com/gustavo_guimaraes')
+  #   @user_courses = scraper.get_title
+  # end
 
 end 
 
