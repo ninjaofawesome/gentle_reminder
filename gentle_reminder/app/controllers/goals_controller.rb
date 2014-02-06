@@ -9,6 +9,7 @@ class GoalsController < ApplicationController
     @goals_array = []
 
     goals.each do |goal|
+      debugger
       repo = goal.remove_whitespace
       commits = github.commits(repo, "master", goal.created_at)
       if commits.class == TrueClass
@@ -18,7 +19,7 @@ class GoalsController < ApplicationController
       else
         date = goal.format_date(goal.timeframe)
         user_commits = github.count_commits(repo, "master", goal.created_at)
-        weekly_commits = github.track_weekly_commits(repo, "master")
+        @weekly_commits = github.track_weekly_commits(repo, "master")
         @goals_array << {:date => date, :commits => user_commits, :goal_key => goal}
       end
     end

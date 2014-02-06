@@ -14,7 +14,11 @@ class Goal < ActiveRecord::Base
   def remove_whitespace
     regex = /(?<=\s)(\w+)(?=\s*)/
     match = self.repo.match(regex)
-    return $1
+    if match.nil? 
+      return self.repo
+    else
+      return $1
+    end
   end
 
 end
