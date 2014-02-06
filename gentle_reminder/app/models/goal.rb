@@ -2,7 +2,7 @@ class Goal < ActiveRecord::Base
 	belongs_to :charity
 	belongs_to :tool
 	belongs_to :user
-  belongs_to :goal_type #new
+  belongs_to :goal_type 
 
   def format_date date
     regex = /^(\d{4})-(\d{2})-(\d{1,2})$/
