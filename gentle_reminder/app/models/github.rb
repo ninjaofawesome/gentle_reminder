@@ -16,6 +16,7 @@ class Github
     begin
     self.client.commits(build_repo_name(repo), branch, {:since => date})
     rescue Octokit::Error => e
+      debugger
       Rails.logger.error
     end
   end
