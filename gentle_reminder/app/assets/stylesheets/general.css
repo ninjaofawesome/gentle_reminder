@@ -15,7 +15,10 @@ a:focus {
   color: #88ffd4; }
 
 a:visited {
-  color: #aaccc0; }
+  color: #447f6a; }
+
+a.hover-button {
+  color: red; }
 
 .container {
   overflow: hidden;
@@ -55,7 +58,7 @@ a:visited {
   width: 41.62%;
   margin-left: 1%;
   margin-top: 5%;
-  height: 40%;
+  min-height: 40%;
   float: right; }
 
 label {
@@ -107,3 +110,12 @@ h1.title {
   background-color: #aaccc0;
   padding: 2%;
   border-radius: 2px; }
+
+.login-button {
+  padding: 20px 30px;
+  margin: 5% 0;
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #d4fff0; }

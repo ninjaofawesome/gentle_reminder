@@ -22,9 +22,10 @@ $col-12: 99.89%;
 $col-margin: 1%;
 
 // BUTTON STYLING
-
+$login-button-padding: 20px 30px;
+$login-button-margin: 5% 0;
 $button-padding: 5px 10px;
-$button-font: 1.5em;
+$button-font-size: 1.5em;
 
 // FONT STUFF
 
@@ -33,10 +34,15 @@ $thin: 500;
 $bold: 700;
 $extra-bold: 900;
 
+
 // @font-family($font){
 // 	font-family: 'porter sans';
 // 	src: url(/fonts/portersans/porter-sans-inline-block-webfont.ttf);
 // }
+
+//font for regular h's turnpike
+//title font: porter sans
+//body font: minimal
 
 // TITLE
 $title-font: 500%;
@@ -67,7 +73,11 @@ a:focus {
 }
 
 a:visited {
-	color: $cool-gray-green;
+	color: $deep-teal;
+}
+
+a.hover-button {
+	color: red;
 }
 
 //CONTAINERS
@@ -118,7 +128,7 @@ a:visited {
 	width: $col-5;
 	margin-left: $col-margin;
 	margin-top: 5%;
-	height: 40%;
+	min-height: 40%;
 	float: right;
 
 }
@@ -126,7 +136,7 @@ a:visited {
 
 label{
 	font-weight: $thin;
-	font-size: $button-font;
+	font-size: $button-font-size;
 	color: $deep-teal;
 }
 
@@ -136,17 +146,18 @@ input[type=submit] {
 	color: $mint-green;
 	border: none;
 	padding: $button-padding;
-	font-size: $button-font;
+	font-size: $button-font-size;
 	font-weight: $extra-bold;
 	border: $gray-green;
 	border-radius: $outline;
 }
 
+
 input[type=text]{
 	background-color: $cool-white;
 	border: 2px solid $gray-green;
 	border-radius: $outline;
-	font-size: $button-font;
+	font-size: $button-font-size;
 	text-align: center;
 
 }
@@ -155,7 +166,7 @@ input[type=password]{
 	background-color: $cool-white;
 	border: 2px solid $gray-green;
 	border-radius: $outline;
-	font-size: $button-font;
+	font-size: $button-font-size;
 	text-align: center;
 
 }
@@ -190,3 +201,16 @@ h1.title {
 	padding: 2%;
 	border-radius: $outline;
 }
+
+//BUTTONS
+.login-button {
+	padding: $login-button-padding;
+	margin: $login-button-margin;
+	font-size: $button-font-size;
+	font-weight: $extra-bold;
+	text-align: center;
+	border-radius: $outline;
+	background-color: $mint-green;
+}
+
+
