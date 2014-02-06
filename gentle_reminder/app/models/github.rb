@@ -20,6 +20,12 @@ class Github
     end
   end
 
+  def format_repo repo
+    regex = /(?<=\s)(\w+)(?=\s*)/
+    match = repo.match(regex)
+    return $1
+  end
+
   def count_commits(repo, branch="master", date)
     commits(repo, branch, date).size
   end
