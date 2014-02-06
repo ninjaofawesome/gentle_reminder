@@ -1,3 +1,9 @@
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 body {
   background-color: azure;
   color: #6a7f78;
@@ -25,8 +31,7 @@ a.hover-button {
   width: 99.89%; }
 
 .header {
-  background-color: #d4fff0;
-  height: 10%;
+  min-height: 10%;
   width: 83.24%;
   padding: 1%;
   margin-left: 8.35%;
@@ -61,6 +66,12 @@ a.hover-button {
   min-height: 40%;
   float: right; }
 
+.center-column {
+  margin: 0 29.19%;
+  width: 41.62%;
+  margin-top: 1%;
+  height: 40%; }
+
 label {
   font-weight: 500;
   font-size: 1.5em;
@@ -94,11 +105,14 @@ input[type=password] {
 .bump {
   margin-top: 1%; }
 
-.moveit-left {
-  margin-left: 10%; }
+.shoveit {
+  margin: 1%; }
 
 .header-align {
   text-align: center; }
+
+.centered {
+  margin-left: 17%; }
 
 h1.title {
   font-size: 500%;
@@ -106,16 +120,20 @@ h1.title {
   color: #447f6a;
   line-height: 100%; }
 
+h1.subtitle {
+  margin-bottom: 40px; }
+
 .emphasis-box {
   background-color: #aaccc0;
   padding: 2%;
   border-radius: 2px; }
 
 .login-button {
+  margin: 5%;
   padding: 20px 30px;
-  margin: 5% 0;
+  display: inline;
   font-size: 1.5em;
   font-weight: 900;
   text-align: center;
   border-radius: 2px;
-  background-color: #d4fff0; }
+  background-color: #aaccc0; }
