@@ -22,6 +22,17 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
+  def update
+    @user = User.find(params[:id])
+    @user.github_name = params[:user][:github_name]
+    debugger
+    if @user.save
+      redirect_to signin_path
+    else
+      render "update"
+    end
+  end
  
   
 

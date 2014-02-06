@@ -14,12 +14,22 @@ GentleReminder::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
+
   # config.action_mailer.raise_delivery_errors = true
 
   # set delivery method to :smpt, :sendmail or :test
   # config.action_mailer.delivery_method = :smpt
 
   # these options are only needed if you choose smpt
+
+
+  # config.action_mailer.raise_delivery_errors = true
+
+  # # set delivery method to :smpt, :sendmail or :test
+  # config.action_mailer.delivery_method = :smpt
+
+  # # these options are only needed if you choose smpt
+
   # config.action_mailer.smpt_settings = {
   #   :address  => "smpt.example.com",
   #   :port =>  25
