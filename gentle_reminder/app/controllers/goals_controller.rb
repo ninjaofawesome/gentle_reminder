@@ -11,20 +11,21 @@ class GoalsController < ApplicationController
 
   def index
     user = User.find(params[:user_id])
-    @goals = user.goals 
+    goals = user.goals 
     github = Github.new(user)
     @goals_array = []
-    @goals.each do |goal|
-      #debugger
-      commits = github.commits(goal.repo, "master", goal.created_at)
+    goals.each do |goal|
+      repo = goal.remove_whitespace
+      debugger
+      commits = github.commits(repo, "master", goal.created_at)
       if commits.class == TrueClass
         goal.destroy
         redirect_to user_goals_path(user)
         flash[:error]= "Invalid repo, please try again."
       else
-        @date = goal.format_date(goal.timeframe)
-        @user_commits = github.count_commits(goal.repo, "master", goal.created_at)
-        @weekly_commits = github.track_weekly_commits(goal.repo, "master")
+        date = goal.format_date(goal.timeframe)
+        user_commits = github.count_commits(repo, "master", goal.created_at)
+        weekly_commits = github.track_weekly_commits(repo, "master")
         @goals_array << {:date => @date, :commits => @user_commits, :goal_key => goal}
       end
     end

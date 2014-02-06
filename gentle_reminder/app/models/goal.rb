@@ -11,4 +11,10 @@ class Goal < ActiveRecord::Base
     " " + month + " " + $3 + ", " + $1
   end
 
+  def remove_whitespace
+    regex = /(?<=\s)(\w+)(?=\s*)/
+    match = self.repo.match(regex)
+    return $1
+  end
+
 end
