@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to signin_path
     else
-      render "update"
+      render "show"
     end
   end
  
