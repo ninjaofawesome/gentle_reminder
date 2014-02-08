@@ -53,7 +53,7 @@ $outline: 2px;
 
 
 //BOX MODEL
-/* apply a natural box layout model to all elements */
+// apply a natural box layout model to all elements //
 *, *:before, *:after {
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box; 
@@ -175,7 +175,8 @@ input[type=text]{
 	border: 2px solid $gray-green;
 	border-radius: $outline;
 	font-size: $button-font-size;
-	text-align: center;
+	color: $gray-green;
+	text-align: left;
 
 }
 
@@ -193,6 +194,10 @@ input[type=password]{
 	margin-top: 1%;
 }
 
+.bump2{
+	margin-top: 5%;
+}
+
 .shoveit {
 	margin: 1%;
 }
@@ -206,8 +211,7 @@ input[type=password]{
 }
 
 
-
-// TITLE
+// TITLING
 
 h1.title {
 	font-size: $title-font;
@@ -217,6 +221,20 @@ h1.title {
 }
 h1.subtitle {
 	margin-bottom: 40px;
+}
+
+.github-access {
+	color: $deep-teal;
+	text-align: center;
+}
+
+.column-header {
+	text-align: center;
+	width: $col-12;
+}
+
+.dropdown-centered {
+	margin: 0 10%;
 }
 
 //BOXES

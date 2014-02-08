@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
        flash[:success] = "Hooray!  Welcome to a new you!"
        #Tells mailer to send a email after user is saved
-       UserMailer.welcome_email(@user).deliver
+       # UserMailer.welcome_email(@user).deliver
        redirect_to user_path(@user)
     else
       render "new"
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.github_name = params[:user][:github_name]
-    debugger
+    # debugger
     if @user.save
       redirect_to signin_path
     else

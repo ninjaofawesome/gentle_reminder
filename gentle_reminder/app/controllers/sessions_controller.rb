@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 		# raise env["omniauth.auth"].to_yaml
 		# debugger
 		if params[:session]
-			# debugger
+			#debugger
 			user = User.find_by_email(params[:session][:email].downcase)
 			# if user #&& user.authenticate(params[:session][:password])
 				sign_in user
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 		else 
 			user = User.from_omniauth(env["omniauth.auth"])
 			# || User.from_meetup(env["omniauth.auth"])
-			#github_data = Github.new(user)
+			github_data = Github.new(user)
 			sign_in user 
 			session[:user_id] = user.uid
 			redirect_to user_goals_path(user)
