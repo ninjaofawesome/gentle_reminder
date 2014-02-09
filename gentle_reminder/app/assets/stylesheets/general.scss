@@ -23,7 +23,7 @@ $col-margin: 1%;
 
 // BUTTON STYLING
 $login-button-padding: 20px 30px;
-$login-button-margin: 5% 0;
+$login-button-margin: 5%;
 $button-padding: 5px 10px;
 $button-font-size: 1.5em;
 
@@ -51,6 +51,14 @@ $title-font: 500%;
 // BORDERS
 $outline: 2px;
 
+
+//BOX MODEL
+// apply a natural box layout model to all elements //
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+ }
 // GENERAL
 body {
 	background-color: $cool-white;
@@ -88,8 +96,7 @@ a.hover-button {
 }
 
 .header {
-	background-color: $mint-green;
-	height: 10%;
+	min-height: 10%;
 	width: $col-10;
 	padding: 1%;
 	margin-left: 8.35%;
@@ -112,6 +119,7 @@ a.hover-button {
 	height: 40%;
 	margin: 5% 0;
 	float: right;
+	// display: inline-block;
 
 }
 
@@ -121,6 +129,7 @@ a.hover-button {
 	margin-top: 5%;
 	height: 40%;
 	float: left;
+	// display: inline-block;
 
 }
 
@@ -130,7 +139,15 @@ a.hover-button {
 	margin-top: 5%;
 	min-height: 40%;
 	float: right;
+	// display: inline-block;
 
+}
+
+.center-column {
+	margin: 0 29.19%;
+	width: $col-5;
+	margin-top: 1%;
+	height: 40%;
 }
 // INPUT STYLING
 
@@ -158,7 +175,8 @@ input[type=text]{
 	border: 2px solid $gray-green;
 	border-radius: $outline;
 	font-size: $button-font-size;
-	text-align: center;
+	color: $gray-green;
+	text-align: left;
 
 }
 
@@ -176,23 +194,47 @@ input[type=password]{
 	margin-top: 1%;
 }
 
-.moveit-left {
-	margin-left: 10%;
+.bump2{
+	margin-top: 5%;
+}
+
+.shoveit {
+	margin: 1%;
 }
 
 .header-align {
 	text-align:center;
 }
 
+.centered {
+	margin-left: 17%;
+}
 
 
-// TITLE
+// TITLING
 
 h1.title {
 	font-size: $title-font;
 	font-weight: $extra-bold;
 	color: $deep-teal;
 	line-height: 100%;
+}
+h1.subtitle {
+	margin-bottom: 40px;
+}
+
+.github-access {
+	color: $deep-teal;
+	text-align: center;
+}
+
+.column-header {
+	text-align: center;
+	width: $col-12;
+}
+
+.dropdown-centered {
+	margin: 0 10%;
 }
 
 //BOXES
@@ -204,13 +246,15 @@ h1.title {
 
 //BUTTONS
 .login-button {
-	padding: $login-button-padding;
 	margin: $login-button-margin;
+	padding: $login-button-padding;
+	display: inline;
 	font-size: $button-font-size;
 	font-weight: $extra-bold;
 	text-align: center;
 	border-radius: $outline;
-	background-color: $mint-green;
+	background-color: $cool-gray-green;
 }
+
 
 

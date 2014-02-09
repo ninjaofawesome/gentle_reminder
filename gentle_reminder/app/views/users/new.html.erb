@@ -1,31 +1,41 @@
 
 
 
-	<div class= "sign-in-left-col emphasis-box">
-		<div class = "header-align">
-			<h1>Sign up now</h1>
-			<h3>Its free and easy!</h3>
+	<div class= "center-column">
+		<div class = "emphasis-box">
+			<div class = "header-align">
+				<h1>Sign up now</h1>
+				<h3>Its free and easy!</h3>
+			</div>
+			
+		<div class = "centered">
+			<%= form_for(@user) do |f| %>
+			<div class = "shoveit">
+				<%= render 'shared/error_messages' %>
+				<%=f.label :name %>
+			</div>
+				<%=f.text_field :name%> 
+			
+			<div class = "shoveit">
+				<%=f.label :email %>
+			</div>
+				<%=f.text_field :email%> 
+			<div class = "shoveit">
+				<%=f.label :password %>
+			</div>
+				<%=f.password_field :password%> 
+			
+			<div class = "shoveit">
+			<!-- make password_conf work -->
+				<%=f.label :password_confirmation %>
+			</div>
+				<%=f.password_field :password%>
+			<div class = "centered">
+				<%= f.submit "Create Account" %>
+			</div>
 		</div>
-		
-
-		<%= form_for(@user) do |f| %>
-		<br>
-		<%= render 'shared/error_messages' %>
-		<%=f.label :name %>
-		<%=f.text_field :name%> 
-		<br>
-		<%=f.label :email %>
-		<%=f.text_field :email%> 
-		<br>
-		<%=f.label :password %>
-		<%=f.password_field :password%> 
-		<br>
-		<!-- make password_conf work -->
-		<%=f.label :password_confirmation %>
-		<%=f.password_field :password%>
-		<br>
-		<%= f.submit "Create Account" %>
 	</div>
+</div>
 
 
 <%end%>

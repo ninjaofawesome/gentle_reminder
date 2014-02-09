@@ -1,13 +1,26 @@
-<h1><%=@user.name%></h1>
+<div class = "center-column">
 
-<p>One more info</p>
-<div>
-<%= form_for(@user) do |f| %>
-    <br>
-    <%= render 'shared/error_messages' %>
-    <%=f.label "What is your Github username?" %>
-    <%=f.text_field :github_name%> 
-    <br>  
-    <%= f.submit "That's it" %>
+<div class = "bump2">
+	<div class = "emphasis-box">
+		<h1 class = "github-access">Welcome, <%=@user.name%>!</h1>
+
+		<p>Gentle reminder helps track your goals through quantifiable means, primarily GitHub.  Help us help you by giving us your GitHub information.  Thanks!</p>
+		<div class = "centered">
+		<%= form_for(@user) do |f| %>
+		    <div class = "shoveit">
+		    <%= render 'shared/error_messages' %>
+		    <%=f.label "What is your Github username?" %>
+		    </div>
+		    <div class = "shoveit">
+		    <%=f.text_field :github_name%> 
+		    </div>
+		    <div class = "shoveit">
+		    	<div class = "centered">
+				    <%= f.submit "That's it" %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-<%end%>
+</div>
+	<%end%>

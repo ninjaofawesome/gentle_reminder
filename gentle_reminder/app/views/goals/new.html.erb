@@ -1,69 +1,80 @@
-<!-- work on this view together -->
-<h1>Create Your Goal</h1>
+<div class = "center-column">
+	<div class = "emphasis-box">
+		<div class = "column-header">
+			<h1>Create Your Goal</h1>
+		</div>
 
-<%= form_for([@user, @goal]) do |f| %>
-<br>
-<h3>What goal would you like to meet?</h3>
-<%= collection_select(:goal_type, :id, @goal_types, :id, :name) %>
-<br>
-<h3>What tools will you be using to achieve your goal?</h3>
-<%= collection_select(:tool, :id, @tools, :id, :tool_description) %>
-<br>
-<h3>Any additonal tools that you would like to use?</h3>
-<p>(If you choose this option, you will need to attend all Meetups AND all Github commits or all Github commits AND all Meetups.  We advise that you don't overextend yourself. )
-<br>
-<%= collection_select(:tool, :id, @tools, :id, :tool_description) %>
-<br>
-<h3>How long will it take you to reach your goal?</h3>
-<%= label_tag "Thirty Days" %>
-<%= radio_button_tag(:timeframe, "30") %>
-<%= label_tag "Ninety Days" %>
-<%= radio_button_tag(:timeframe, "90") %>
-<%= label_tag "One Hundred Eighty Days" %>
-<%= radio_button_tag(:timeframe, "180") %>
-<br>
-<h4>If you're planning on using Github, how many commits will you need to meet your goal?</h4>
-<%= label_tag "10 Commits" %>
-<%= radio_button_tag(:commitments, 10) %>
-<%= label_tag "25 commits" %>
-<%= radio_button_tag(:commitments, 25) %>
-<%= label_tag "50 commits" %>
-<%= radio_button_tag(:commitments, 50) %>
-<%= label_tag "100 commits" %>
-<%= radio_button_tag(:commitments, 100) %>
-<br>
-<%= label_tag "What Repo will we be tracking?" %>
-<%= text_field_tag :repo %>
-<br>
-<h4>If you're planning on going to Meetups, how many Meetups will you need to meet your goals?</h4>
-<p>(Please note, this is per Meetup group you choose.)
-<br>
-<%= label_tag "1 Meetup" %>
-<%= radio_button_tag(:meetups, 1) %>
-<%= label_tag "3 Meetups" %>
-<%= radio_button_tag(:meetups, 3) %>
-<%= label_tag "6 Meetups" %>
-<%= radio_button_tag(:meetups, 6) %>
-<%= label_tag "10 Meetups" %>
-<%= radio_button_tag(:meetups, 10) %>
-<br>
-<h3>What charity would you like to donate to?</h3>
-<p>(Please note, if you complete your goal, 10% plus processing fees will be donated.)
-<br>
-<%= collection_select(:charity, :id, @charities, :id, :name) %>
-<br>
-<h3>How much will you put on the line in order to meet your goal?</h3>
-<%= label_tag "$100" %>
-<%= radio_button_tag(:monetary_amount, "100") %>
-<%= label_tag "$250" %>
-<%= radio_button_tag(:monetary_amount, "250") %>
-<%= label_tag "$500" %>
-<%= radio_button_tag(:monetary_amount, "500") %>
+			<%= form_for([@user, @goal]) do |f| %>
+			<div class = "shoveit">
+				<h3>What goal would you like to meet?</h3>
+				<div class = "dropdown-centered">
+					<%= collection_select(:goal_type, :id, @goal_types, :id, :name) %>
+				</div>
+			</div>
+			<div class = "shoveit" id = "github">
+				<h3>What tools will you be using to achieve your goal?</h3>
+				<%= collection_select(:tool, :id, @tools, :id, :tool_description) %>
+			</div>
+			<div class = "shoveit">
+				<h3>How long will it take you to reach your goal?</h3>
+				<%= label_tag "Thirty Days" %>
+				<%= radio_button_tag(:timeframe, "30") %>
+				<%= label_tag "Ninety Days" %>
+				<%= radio_button_tag(:timeframe, "90") %>
+				<%= label_tag "One Hundred Eighty Days" %>
+				<%= radio_button_tag(:timeframe, "180") %>
+			</div>
+			<div class = "github-hidden">
+				<div class = "shoveit">
+					<h4>If you're planning on using Github, how many commits will you need to meet your goal?</h4>
+					<%= label_tag "10 Commits" %>
+					<%= radio_button_tag(:commitments, 10) %>
+					<%= label_tag "25 commits" %>
+					<%= radio_button_tag(:commitments, 25) %>
+					<%= label_tag "50 commits" %>
+					<%= radio_button_tag(:commitments, 50) %>
+					<%= label_tag "100 commits" %>
+					<%= radio_button_tag(:commitments, 100) %>
+				</div>
+			</div>
+			<div class = "shoveit">
+				<%= label_tag "What Repo will we be tracking?" %>
+				<%= text_field_tag :repo %>
+			</div>
+			<div class = "shoveit">
+				<h4>If you're planning on going to Meetups, how many Meetups will you need to meet your goals?</h4>
+				<p>(Please note, this is per Meetup group you choose.)</p>
+			</div>
+			<div class = "shoveit">
+				<%= label_tag "1 Meetup" %>
+				<%= radio_button_tag(:meetups, 1) %>
+				<%= label_tag "3 Meetups" %>
+				<%= radio_button_tag(:meetups, 3) %>
+				<%= label_tag "6 Meetups" %>
+				<%= radio_button_tag(:meetups, 6) %>
+				<%= label_tag "10 Meetups" %>
+				<%= radio_button_tag(:meetups, 10) %>
+			</div>
+			<div class = "shoveit">
+				<h3>What charity would you like to donate to?</h3>
+			</div>
+			<div class = "shoveit">
+				<%= collection_select(:charity, :id, @charities, :id, :name) %>
+			</div>
+			<div class = "shoveit">
+			<h3>How much will you put on the line in order to meet your goal?</h3>
+				<%= label_tag "$100" %>
+				<%= radio_button_tag(:monetary_amount, "100") %>
+				<%= label_tag "$250" %>
+				<%= radio_button_tag(:monetary_amount, "250") %>
+				<%= label_tag "$500" %>
+				<%= radio_button_tag(:monetary_amount, "500") %>
+			</div>
+			<div class = "shoveit">
+				<%= f.submit ("Lets Do This!") %>
+			</div>
 
-<br>
-<br>
 
-<%= f.submit ("Lets Do This!") %>
-
-
-<%end%>
+			<%end%>
+	</div>
+</div>

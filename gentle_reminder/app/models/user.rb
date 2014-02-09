@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
 	has_many :goals
 	has_many :goal_types, through: :goals
 	has_many :charities, through: :goals
-	#has_secure_password
+	
+	#github sign in does not work with validations currently.  To fix.
+	# has_secure_password
 
 	# validates :name, :presence => true, :length => {:minimum => 2, :maximum => 100}
 	# VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -11,11 +13,13 @@ class User < ActiveRecord::Base
 	# 					:length => {:minimum => 5, :maximum => 100},
 	# 					:format => {:with => VALID_EMAIL_REGEX, :message => "Email incorrect!  Try again."},
 	# 					:uniqueness => {:case_sensitive => false}
+
+	#does wonky stuff with email sign in, figure out why later
+	#validates :password, :length => {:minimum => 6, :message => "Password must be minimum 6 letters and include a number and one uppercase letter"}
 	
-	# validates :password, :length => {:minimum => 6, :message => "Password must be minimum 6 letters and include a number and one uppercase letter"}
 
 	# before_save {|user| user.email = email.downcase}
-	before_save :create_remember_token
+	# before_save :create_remember_token
 
 	def self.from_omniauth(auth)
   	where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)

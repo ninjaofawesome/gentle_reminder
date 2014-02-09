@@ -9,6 +9,7 @@ class GoalsController < ApplicationController
     @goals_array = []
 
     goals.each do |goal|
+      debugger
       repo = goal.remove_whitespace
       commits = github.commits(repo, "master", goal.created_at)
       if commits.class == TrueClass
@@ -18,8 +19,8 @@ class GoalsController < ApplicationController
       else
         date = goal.format_date(goal.timeframe)
         user_commits = github.count_commits(repo, "master", goal.created_at)
-        weekly_commits = github.track_weekly_commits(repo, "master")
-        @goals_array << {:date => @date, :commits => @user_commits, :goal_key => goal}
+        @weekly_commits = github.track_weekly_commits(repo, "master")
+        @goals_array << {:date => date, :commits => user_commits, :goal_key => goal}
       end
     end
 
@@ -38,8 +39,7 @@ class GoalsController < ApplicationController
   def create
     future_date = Date.today + params[:timeframe].to_i.days
     user = User.find(params[:user_id])
-    goal = user.goals.build(:goal_type_id => params[:goal_type][:id], :charity_id => params[:charity][:id], :monetary_amount => params[:monetary_amount], :timeframe => future_date, :commitments => params[:commitments], :meetups => params[:meetups], :repo => params[:repo])
-    
+    goal = user.goals.build(:goal_type_id => params[:goal_type][:id], :charity_id => params[:charity][:id], :monetary_amount => params[:monetary_amount], :timeframe => future_date, :commitments => params[:commitments], :meetups => params[:meetups], :repo => params[:repo]) 
     if goal.save
       redirect_to user_goals_path(user)
     else
