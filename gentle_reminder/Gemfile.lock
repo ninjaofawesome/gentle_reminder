@@ -146,11 +146,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.2.1)
   debugger
   figaro
   jquery-rails
+  mail
   octokit
   omniauth-github
   omniauth-meetup
