@@ -9,7 +9,7 @@ class GoalsController < ApplicationController
     @goals_array = []
 
     goals.each do |goal|
-      debugger
+      # debugger
       repo = goal.remove_whitespace
       commits = github.commits(repo, "master", goal.created_at)
       if commits.class == TrueClass

@@ -1,3 +1,5 @@
+<!-- This page is mostly complete. -->
+
 <div class = "center-column">
 
 <div class = "bump2">
@@ -7,13 +9,16 @@
 		<p>Gentle reminder helps track your goals through quantifiable means, primarily GitHub.  Help us help you by giving us your GitHub information.  Thanks!</p>
 		<div class = "centered">
 		<%= form_for(@user) do |f| %>
-		    <div class = "shoveit">
-		    <%= render 'shared/error_messages' %>
-		    <%=f.label "What is your Github username?" %>
-		    </div>
-		    <div class = "shoveit">
-		    <%=f.text_field :github_name%> 
-		    </div>
+			<div class = "col-12">
+			    <div class = "shoveit">
+				    <%= render 'shared/error_messages' %>
+				    <%=f.label "What is your Github username?" %>
+			    </div>
+				<div class = "shoveit">
+				    <%=f.text_field :github_name%> 
+				</div>
+			</div>
+
 		    <div class = "shoveit">
 		    	<div class = "centered">
 				    <%= f.submit "That's it" %>

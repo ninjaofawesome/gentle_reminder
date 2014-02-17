@@ -1,3 +1,6 @@
+<!-- Using this page?  Only with validations? -->
+<!-- needs to NOT be in the header -->
+
 <% if @user.errors.any? %>
 <br>
 <p>This form contains <%= pluralize(@user.errors.count, "error")%>.</p>

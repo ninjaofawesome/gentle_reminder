@@ -10,16 +10,19 @@
 
 	<div class = "header">
 		<h1 class = "title">GENTLE REMINDER</h1>
-			<h1 class = "subtitle">Commit to doing more.</h1>
-			<div id= "email" class = "login-button">
+		<h1 class = "subtitle">Commit to doing more.</h1>
+			
+			<div id= "hideme" class = "login-button">
 					<% if signed_in? %>
 				  	<%= link_to "Sign Out", signout_path, method: "delete"%>
 					<% else %>
-					<%= link_to "Email", signin_path %>
+					<%= link_to "Sign In By Email", signin_path %>
 			</div>
-			<div class = "login-button">
-				<%= link_to "Sign in with Github ", "/auth/github" %>
+
+			<div id= "hideme" class = "login-button">
+				<%= link_to "Sign In With Github ", "/auth/github" %>
 			</div>
+
 			<!-- <div class = "login-button"> -->
 				<% link_to "Sign in with Meetup", "/auth/meetup" %>
 				<% end %>

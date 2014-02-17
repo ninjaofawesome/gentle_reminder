@@ -1,20 +1,29 @@
-
-	<div class = "center-column">
+<!-- This page is complete -->
+<div class = "center-column bump2">
+	<div class = "header-align">
 		<h1> Welcome Back! </h1>
+	</div>
+	<div class = "centered">
+	<%= form_for(:session, url: sessions_path) do |f| %>
+		<div class = "shoveit">
+			<%= f.label :email %>
+		</div>
+			<%= f.text_field :email %>
+		<div class = "shoveit">
+			<%= f.label :password %>
+		</div>
+			<%= f.password_field :password %>
 
-<%= form_for(:session, url: sessions_path) do |f| %>
-	<div class = "shoveit">
-		<%= f.label :email %>
+		<div class = "shoveit">
+			<div class = "centered2 bump2">
+				<%= f.submit "Sign in"%>
+			</div>
+		</div>
+	<% end %>
+		<div class = "shoveit">
+			<div class = "centered">
+				<p>New user? <%= link_to "Click Here!", signup_path %></p>
+			</div>
+		</div>
 	</div>
-		<%= f.text_field :email %>
-	<div class = "shoveit">
-		<%= f.label :password %>
-	</div>
-		<%= f.password_field :password %>
-
-	<div class = "shoveit">
-		<%= f.submit "Sign in"%>
-	</div>
-<% end %>
-		<p>New user? <%= link_to "Sign up now!", signup_path %></p>
-	</div>
+</div>
