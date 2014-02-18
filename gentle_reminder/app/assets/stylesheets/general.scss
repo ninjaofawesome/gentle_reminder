@@ -93,7 +93,7 @@ body {
 	color: $gray-green;
 	line-height: 1.2em;
 	font-size: 1em;
-	font-family: helvetica, arial, sans-serif;
+	font-family: 'minimal', helvetica, arial, sans-serif;
 } 
 
 a {
@@ -123,12 +123,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1.title {
+	font-family: 'portersans', helvetica, arial, sans-serif;
 	font-size: $title-font;
 	font-weight: $extra-bold;
 	color: $deep-teal;
 	line-height: 100%;
 }
 h1.subtitle {
+	font-family: 'turnpike', helvetica, arial, sans-serif;
 	margin-bottom: 40px;
 }
 
