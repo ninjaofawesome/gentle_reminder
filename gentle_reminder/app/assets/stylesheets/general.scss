@@ -128,10 +128,12 @@ h1.title {
 	font-weight: $extra-bold;
 	color: $deep-teal;
 	line-height: 100%;
+	text-align: center;
 }
 h1.subtitle {
 	font-family: 'turnpike', helvetica, arial, sans-serif;
 	margin-bottom: 40px;
+	text-align: center;
 }
 
 p {
@@ -141,19 +143,19 @@ p {
 
 //CONTAINERS
 
-.container{
-	overflow: hidden;
-	width: $col-12;
-}
+// .container{
+// 	overflow: hidden;
+// 	width: $col-12;
+// }
 
-.header {
-	min-height: 10%;
-	width: $col-10;
-	padding: 1%;
-	margin-left: 8.35%;
-	text-align: center;
+// .header {
+// 	min-height: 10%;
+// 	width: $col-10;
+// 	padding: 1%;
+// 	margin-left: 8.35%;
+// 	text-align: center;
 
-}
+// }
 
 .left-col {
 	border-radius: $outline;
