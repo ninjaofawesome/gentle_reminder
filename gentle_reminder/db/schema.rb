@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140206121238) do
+ActiveRecord::Schema.define(:version => 20140302022312) do
 
   create_table "charities", :force => true do |t|
     t.string   "name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20140206121238) do
     t.integer  "meetups",         :limit => 255
     t.date     "timeframe"
     t.string   "repo"
+    t.string   "name"
   end
 
   create_table "tools", :force => true do |t|

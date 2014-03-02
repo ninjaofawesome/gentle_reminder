@@ -19,30 +19,21 @@
 					<%= link_to "Sign In By Email", signin_path %>
 			</div>
 
-			<div id= "hideme" class = "login-button">
+			<div id= "hideme" class = "github_login-button">
 				<%= link_to "Sign In With Github ", "/auth/github" %>
 			</div>
 
-			<!-- <div class = "login-button"> -->
-				<% link_to "Sign in with Meetup", "/auth/meetup" %>
+			
 				<% end %>
-			<!-- </div> -->
+			
 				<% flash.each do |key, value| %>
 					<span><%= value %></span>
 				<% end %>
 	</div>
 
-<div class = "container">
-
-				
-				
-				
-				
-		
-
-<%= yield %>
-
-</div>
+		<div class = "container">
+			<%= yield %>
+		</div>
 </body>
 </html>
 
