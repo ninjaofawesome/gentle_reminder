@@ -1,57 +1,33 @@
 <!-- There's something wacky going on here in the left column with height/margins.  Correct it. -->
 
-<div class = "left-col">
-  <div class = "emphasis-box-goals">
+<div class= "col-md-6">
     <h2> MY GOALS</h2>
-      <div class = "goals-box">
-        <div id = "pop-up-box" class = "goals-box-left bump2">
-          <h2 class ="goals-description">Show Goal 1 Here</h2>
-        </div>
-         <div id = "pop-up-box" class = "goals-box-right bump2">
-          <h2 class ="goals-description">Show Goal 2 Here</h2>
-        </div>
-        <br>
-        <div id = "pop-up-box" class = "goals-box-left bump2">
-          <h2 class ="goals-description">Show Goal 3 Here</h2>
-        </div>
-         <div id = "pop-up-box" class = "goals-box-right bump2">
-          <h2 class ="goals-description">Show Goal 4 Here</h2>
-        </div>
-      </div>
-    <p><%= link_to "Create a goal now!", new_user_goal_path %></p>
-  
-  </div>
+    <h3><%= link_to "Create a goal now!", new_user_goal_path %></h3>
 </div>
 
 
 
 
-<div class = "right-col">
-  <div class = "emphasis-box">
+<div class= "col-md-6">
     <h2>MY STATS</h2>
      <% @goals_array.each do |goal_hash| %>
        <ul>
-        <li style= "list-style-type:none;"><h3><%= goal_hash[:goal_key].goal_type.name %></h3></li>
+        <li><h3><%= goal_hash[:goal_key].goal_type.name %></h3></li>
       
       <h3>Finish Date</h3>
-        <li style= "list-style-type:none;">Finish Date: <%= goal_hash[:date] %></li>
+        <li>Finish Date: <%= goal_hash[:date] %></li>
       <h3>My Charity</h3>
-      	<li style= "list-style-type:none;">My Charity: <%= goal_hash[:goal_key].charity.name%></li>
+      	<li>My Charity: <%= goal_hash[:goal_key].charity.name%></li>
       <h3>My Pledge</h3>
-      	<li style= "list-style-type:none;">My Pledge: <%= goal_hash[:goal_key].monetary_amount %></li>
+      	<li>My Pledge: <%= goal_hash[:goal_key].monetary_amount %></li>
       <h3>Repo Name</h3>
-        <li style= "list-style-type:none;">Repo Name: <%= goal_hash[:goal_key].repo%> </li>
+        <li>Repo Name: <%= goal_hash[:goal_key].repo%> </li>
       <h3>Total Commits</h3>
-        <li style= "list-style-type:none;">My Commits: <%= goal_hash[:goal_key].commitments %></li>
-    	<!-- <li style= "list-style-type:none;">My Meetups: <%= goal_hash[:goal_key].meetups %></li> -->
+        <li>My Commits: <%= goal_hash[:goal_key].commitments %></li>
+    	<!-- <li>My Meetups: <%= goal_hash[:goal_key].meetups %></li> -->
       <h3>Commits This Week</h3>
-        <li style= "list-style-type:none;"> Past week commits: <%= @weekly_commits%> </li>
-      
-   
-
+        <li> Past week commits: <%= @weekly_commits%> </li>
     <% end %>
-
-    </div>
 </div>
 
 

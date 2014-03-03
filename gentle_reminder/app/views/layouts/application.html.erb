@@ -7,42 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-	<div class = "header">
-		<h1 class = "title">GENTLE REMINDER</h1>
-		<h1 class = "subtitle">Commit to doing more.</h1>
-			
-			<div id= "hideme" class = "login-button">
+	<div class = "container">
+		<div class = "row">
+			<div class="col-md-8 .col-md-offset-2">
+				<h1 class = "title">GENTLE REMINDER</h1>
+				<h1 class = "subtitle">Commit to doing more.</h1>
 					<% if signed_in? %>
 				  	<%= link_to "Sign Out", signout_path, method: "delete"%>
 					<% else %>
+				<button type="button" class="btn btn-default">
 					<%= link_to "Sign In By Email", signin_path %>
+				</button>
+				<button type="button" class="btn btn-default">
+					<%= link_to "Sign In With Github ", "/auth/github" %>
+					<% end %>
+				</button>
 			</div>
 
-			<div id= "hideme" class = "login-button">
-				<%= link_to "Sign In With Github ", "/auth/github" %>
+			
+				
+					<% flash.each do |key, value| %>
+						<span><%= value %></span>
+					<% end %>
 			</div>
 
-			<!-- <div class = "login-button"> -->
-				<% link_to "Sign in with Meetup", "/auth/meetup" %>
-				<% end %>
-			<!-- </div> -->
-				<% flash.each do |key, value| %>
-					<span><%= value %></span>
-				<% end %>
+				<%= yield %>
+
+		</div>
 	</div>
 
-<div class = "container">
-
-				
-				
-				
-				
-		
-
-<%= yield %>
-
-</div>
 </body>
 </html>
 

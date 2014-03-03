@@ -1,29 +1,15 @@
 <!-- This page is complete -->
-<div class = "center-column bump2">
-	<div class = "header-align">
-		<h1> Welcome Back! </h1>
-	</div>
-	<div class = "centered">
+<div class = "col-md-6">
+	<h1> Welcome Back! </h1>
 	<%= form_for(:session, url: sessions_path) do |f| %>
-		<div class = "shoveit">
 			<%= f.label :email %>
-		</div>
 			<%= f.text_field :email %>
-		<div class = "shoveit">
 			<%= f.label :password %>
-		</div>
 			<%= f.password_field :password %>
-
-		<div class = "shoveit">
-			<div class = "centered2 bump2">
-				<%= f.submit "Sign in"%>
-			</div>
-		</div>
+			<%= f.submit "Sign in"%>
 	<% end %>
-		<div class = "shoveit">
-			<div class = "centered">
-				<p>New user? <%= link_to "Click Here!", signup_path %></p>
-			</div>
-		</div>
-	</div>
+		<p>New user? <%= link_to "Click Here!", signup_path %></p>
+		
 </div>
+
+

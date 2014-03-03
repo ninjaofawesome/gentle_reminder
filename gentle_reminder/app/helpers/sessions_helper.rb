@@ -6,7 +6,7 @@ module SessionsHelper
 
 	def signed_in?
 		#either someone is signed in via email or omniauth
-		!current_user.nil?
+		current_user.nil?
 	end 
 
 	def current_user=(user)

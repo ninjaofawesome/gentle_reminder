@@ -1,41 +1,25 @@
 <!-- Page Complete for styling 2/8 -->
 
 
-	<div class= "center-column">
-		<div class = "emphasis-box">
-			<div class = "header-align">
-				<h1>Sign up now</h1>
-				<h3>Its free and easy!</h3>
-			</div>
-			
-		<div class = "centered">
+	<div class= "md-col-6">
+		<h1>Sign up now</h1>
+		<h3>Its free and easy!</h3>
 			<%= form_for(@user) do |f| %>
-			<div class = "shoveit">
 				<%= render 'shared/error_messages' %>
 				<%=f.label :name %>
-			</div>
 				<%=f.text_field :name%> 
-			
-			<div class = "shoveit">
 				<%=f.label :email %>
-			</div>
-				<%=f.text_field :email%> 
-			<div class = "shoveit">
+				<%=f.text_field :email%>
 				<%=f.label :password %>
-			</div>
 				<%=f.password_field :password%> 
-			
-			<div class = "shoveit">
+		
 			<!-- make password_conf work -->
 				<%=f.label :password_confirmation %>
-			</div>
 				<%=f.password_field :password%>
-			<div class = "centered">
+				<br>
 				<%= f.submit "Create Account" %>
-			</div>
-		</div>
 	</div>
-</div>
+
 
 
 <%end%>
