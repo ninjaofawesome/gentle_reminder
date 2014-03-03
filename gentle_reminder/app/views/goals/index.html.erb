@@ -1,34 +1,31 @@
 <!-- There's something wacky going on here in the left column with height/margins.  Correct it. -->
+<div class = "row">
+  <div class= "col-md-6">
+      <h2> MY GOALS</h2>
+      <h3><%= link_to "Create a goal now!", new_user_goal_path %></h3>
+  </div>
 
-<div class= "col-md-6">
-    <h2> MY GOALS</h2>
-    <h3><%= link_to "Create a goal now!", new_user_goal_path %></h3>
+  <div class= "col-md-6">
+      <h2>MY STATS</h2>
+       <% @goals_array.each do |goal_hash| %>
+         <ul>
+          <li><h3><%= goal_hash[:goal_key].goal_type.name %></h3></li>
+        
+        <h3>Finish Date</h3>
+          <li>Finish Date: <%= goal_hash[:date] %></li>
+        <h3>My Charity</h3>
+        	<li>My Charity: <%= goal_hash[:goal_key].charity.name%></li>
+        <h3>My Pledge</h3>
+        	<li>My Pledge: <%= goal_hash[:goal_key].monetary_amount %></li>
+        <h3>Repo Name</h3>
+          <li>Repo Name: <%= goal_hash[:goal_key].repo%> </li>
+        <h3>Total Commits</h3>
+          <li>My Commits: <%= goal_hash[:goal_key].commitments %></li>
+      	<!-- <li>My Meetups: <%= goal_hash[:goal_key].meetups %></li> -->
+        <h3>Commits This Week</h3>
+          <li> Past week commits: <%= @weekly_commits%> </li>
+      <% end %>
+  </div>
 </div>
-
-
-
-
-<div class= "col-md-6">
-    <h2>MY STATS</h2>
-     <% @goals_array.each do |goal_hash| %>
-       <ul>
-        <li><h3><%= goal_hash[:goal_key].goal_type.name %></h3></li>
-      
-      <h3>Finish Date</h3>
-        <li>Finish Date: <%= goal_hash[:date] %></li>
-      <h3>My Charity</h3>
-      	<li>My Charity: <%= goal_hash[:goal_key].charity.name%></li>
-      <h3>My Pledge</h3>
-      	<li>My Pledge: <%= goal_hash[:goal_key].monetary_amount %></li>
-      <h3>Repo Name</h3>
-        <li>Repo Name: <%= goal_hash[:goal_key].repo%> </li>
-      <h3>Total Commits</h3>
-        <li>My Commits: <%= goal_hash[:goal_key].commitments %></li>
-    	<!-- <li>My Meetups: <%= goal_hash[:goal_key].meetups %></li> -->
-      <h3>Commits This Week</h3>
-        <li> Past week commits: <%= @weekly_commits%> </li>
-    <% end %>
-</div>
-
 
 
