@@ -1,6 +1,6 @@
 class Github
 
-  attr_reader :client, :user, :stack
+  attr_reader :client, :user
 
   def initialize(user) 
     @client = Octokit::Client.new :access_token => user.github_token

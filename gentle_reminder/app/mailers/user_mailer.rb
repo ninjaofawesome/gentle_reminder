@@ -8,8 +8,4 @@ class UserMailer < ActionMailer::Base
   	mail(to:@user.email, subject: 'Hey Girl!!! Welcome to Gentle Reminder')
   end 
 
-  # def commit_updates(user)
-
-
-  # end 
 end

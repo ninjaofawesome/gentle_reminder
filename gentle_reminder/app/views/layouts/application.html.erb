@@ -24,18 +24,22 @@
 				</button>
 			</div>
 
-			
-				
-					<% flash.each do |key, value| %>
-						<span><%= value %></span>
-					<% end %>
+
+			<div id= "hideme" class = "github_login-button">
+				<%= link_to "Sign In With Github ", "/auth/github" %>
 			</div>
 
-
-				<%= yield %>
-
-		</div>
+			
+				<% end %>
+			
+				<% flash.each do |key, value| %>
+					<span><%= value %></span>
+				<% end %>
 	</div>
+
+		<div class = "container">
+			<%= yield %>
+		</div>
 
 </body>
 </html>

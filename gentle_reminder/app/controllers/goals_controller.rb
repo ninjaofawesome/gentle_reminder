@@ -9,7 +9,6 @@ class GoalsController < ApplicationController
     @goals_array = []
 
     goals.each do |goal|
-      # debugger
       repo = goal.remove_whitespace
       commits = github.commits(repo, "master", goal.created_at)
       if commits.class == TrueClass
@@ -32,14 +31,13 @@ class GoalsController < ApplicationController
     @goal_types = GoalType.all
     @tools = Tool.all
     @charities = Charity.all
-    # @money = Goal.find(params[:user_id])
   end 
 
 
   def create
     future_date = Date.today + params[:timeframe].to_i.days
     user = User.find(params[:user_id])
-    goal = user.goals.build(:goal_type_id => params[:goal_type][:id], :charity_id => params[:charity][:id], :monetary_amount => params[:monetary_amount], :timeframe => future_date, :commitments => params[:commitments], :meetups => params[:meetups], :repo => params[:repo]) 
+    goal = user.goals.build(:name => params[:name], :timeframe => future_date, :commitments => params[:commitments], :repo => params[:repo]) 
     if goal.save
       redirect_to user_goals_path(user)
     else
@@ -47,11 +45,6 @@ class GoalsController < ApplicationController
     end 
   end 
 
-  # def show
-  #   @goal = Goal.find(params[:id])
-  #   scraper = Scraper.new('http://www.codecademy.com/gustavo_guimaraes')
-  #   @user_courses = scraper.get_title
-  # end
 
 end 
 
