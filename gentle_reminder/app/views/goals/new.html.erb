@@ -1,50 +1,41 @@
 <div class = "col-md-6">
-			<h1>Create Your Goal</h1>
-			<br>
-			<%= form_for([@user, @goal]) do |f| %>
+	<h1>Create Your Goal</h1>
+	<%= form_for([@user, @goal]) do |f| %>
 
-			
-			<div class = "shoveit">
-				<%= label_tag "What is the title of this goal?" %>
-				<%= text_field_tag :name %>
-			</div>
-			
-			<div class = "shoveit">
-				<h3>How long will it take you to reach your Github commit goal?</h3>
-				<%= label_tag "Thirty Days" %>
-				<%= radio_button_tag(:timeframe, "30") %>
-				<%= label_tag "Ninety Days" %>
-				<%= radio_button_tag(:timeframe, "90") %>
-				<%= label_tag "One Hundred Eighty Days" %>
-				<%= radio_button_tag(:timeframe, "180") %>
-			</div>
-			
-			<div class = "github-hidden">
-				<div class = "shoveit">
-					<h4>How many commits will you need to meet your goal?</h4>
-					<%= label_tag "10 Commits" %>
-					<%= radio_button_tag(:commitments, 10) %>
-					<%= label_tag "25 commits" %>
-					<%= radio_button_tag(:commitments, 25) %>
-					<%= label_tag "50 commits" %>
-					<%= radio_button_tag(:commitments, 50) %>
-					<%= label_tag "100 commits" %>
-					<%= radio_button_tag(:commitments, 100) %>
-				</div>
-			</div>
-			
-			<div class = "shoveit">
-				<%= label_tag "What Repo will we be tracking?" %>
-				<%= text_field_tag :repo %>
-			</div>
-			
-			
-			<div class = "shoveit">
+		<%= label_tag "What is the title of this goal?" %>
+		<%= text_field_tag :name %>
+	
+		<h3>How long will it take you to reach your Github commit goal?</h3>
+		<%= label_tag "Thirty Days" %>
+		<%= radio_button_tag(:timeframe, "30") %>
+		<%= label_tag "Ninety Days" %>
+		<%= radio_button_tag(:timeframe, "90") %>
+		<%= label_tag "One Hundred Eighty Days" %>
+		<%= radio_button_tag(:timeframe, "180") %>
+	
+			<h4>How many commits will you need to meet your goal?</h4>
+			<%= label_tag "10 Commits" %>
+			<%= radio_button_tag(:commitments, 10) %>
+			<%= label_tag "25 commits" %>
+			<%= radio_button_tag(:commitments, 25) %>
+			<%= label_tag "50 commits" %>
+			<%= radio_button_tag(:commitments, 50) %>
+			<%= label_tag "100 commits" %>
+			<%= radio_button_tag(:commitments, 100) %>
+	
+	
 
-				<%= f.submit ("Lets Do This!") %>
-		
+		<%= label_tag "What Repo will we be tracking?" %>
+		<%= text_field_tag :repo %>
+
+	
+	
 
 
-			<%end%>
+		<%= f.submit ("Lets Do This!") %>
+
+
+
+	<%end%>
 
 </div>

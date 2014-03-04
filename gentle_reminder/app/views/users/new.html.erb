@@ -1,21 +1,29 @@
 <!-- Page Complete for styling 2/8 -->
 
 
-	<div class= "md-col-6">
+	<div class= "md-col-6 col-md-offset-5">
 		<h1>Sign up now</h1>
 		<h3>Its free and easy!</h3>
 			<%= form_for(@user) do |f| %>
 				<%= render 'shared/error_messages' %>
 				<%=f.label :name %>
+				<br>
 				<%=f.text_field :name%> 
+				<br>
 				<%=f.label :email %>
+				<br>
 				<%=f.text_field :email%>
+				<br>
 				<%=f.label :password %>
+				<br>
 				<%=f.password_field :password%> 
 		
 			<!-- make password_conf work -->
+				<br>
 				<%=f.label :password_confirmation %>
+				<br>
 				<%=f.password_field :password%>
+				<br>
 				<br>
 				<%= f.submit "Create Account" %>
 	</div>

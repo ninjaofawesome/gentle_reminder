@@ -6,42 +6,43 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<div class = "container">
-		<div class = "row">
-			<div class="col-md-8">
-				<h1 class = "title">GENTLE REMINDER</h1>
-				<h1 class = "subtitle">Commit to doing more.</h1>
-					<% if signed_in? %>
-				  	<%= link_to "Sign Out", signout_path, method: "delete"%>
-					<% else %>
-				<button type="button" class="btn btn-default">
-					<%= link_to "Sign In By Email", signin_path %>
-				</button>
-				<button type="button" class="btn btn-default">
-					<%= link_to "Sign In With Github ", "/auth/github" %>
-					<% end %>
-				</button>
-			</div>
-
-
-			<div id= "hideme" class = "github_login-button">
-				<%= link_to "Sign In With Github ", "/auth/github" %>
-			</div>
-
-			
-				<% end %>
-			
-				<% flash.each do |key, value| %>
-					<span><%= value %></span>
-				<% end %>
-	</div>
-
+	<body>
 		<div class = "container">
-			<%= yield %>
+			<div class = "row">
+				<div class="col-md-8 col-md-offset-2">
+					<h1 class = "title">GENTLE REMINDER</h1>
+					<h1 class = "subtitle">Commit to doing more.</h1>
+						<div class = "row">
+							<% if signed_in? %>
+						  	<%= link_to "Sign Out", signout_path, method: "delete"%>
+							<% else %>
+							<div class = "col-md-8 col-md-offset-4">
+							
+								<button type="button" class="btn btn-default">
+									<%= link_to "Sign In By Email", signin_path %>
+								</button>
+								<button type="button" class="btn btn-default">
+									<%= link_to "Sign In With Github ", "/auth/github" %>
+									<% end %>
+								</button>
+							
+							</div>
+					    </div>
+				</div>
+			</div>
+
+			<div class= "row">
+				<div class = "col-md-6 col-md-offset-2">
+					<% flash.each do |key, value| %>
+						<span><%= value %></span>
+					<% end %>
+				</div>
+			</div>
+
+				<%= yield %>
+
+			</div>
 		</div>
-
-</body>
+	</body>
 </html>
-
 

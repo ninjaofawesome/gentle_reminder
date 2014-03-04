@@ -9,9 +9,10 @@ class UsersController < ApplicationController
     if @user.save
        flash[:success] = "Hooray!  Welcome to a new you!"
 
-       UserMailer.welcome_email(@user).deliver
-       redirect_to user_path(@user)
-      60f8883b1c2f5469257d8a450fb66ef15cf50b44
+      #  UserMailer.welcome_email(@user).deliver
+      #  redirect_to user_path(@user)
+      # 60f8883b1c2f5469257d8a450fb66ef15cf50b44
+    
     else
       render "new"
     end
