@@ -34,7 +34,26 @@ $mint-green: #d4fff0;
 $deep-teal: #447f6a;
 $cool-gray-green: #AACCC0;
 
-h1 {
-	color: $cool-gray-green;
+//FONTS
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'portersans', helvetica, arial, sans-serif;
+	// color: yellow;
 }
+
+h1.title {
+	font-family: 'portersans', helvetica, arial, sans-serif;
+	font-size: 800%;
+	color: $deep-teal;
+	text-align: center;
+}
+h1.subtitle {
+	font-family: 'turnpike', helvetica, arial, sans-serif;
+	text-align: center;
+}
+
+p {
+	font-family: 'minimal', helvetica, arial, sans-serif;
+	color: red;
+}
+
 
