@@ -1,0 +1,20 @@
+body{
+	background-color: white;
+}
+
+h1.title{
+	font-size: 450%;
+}
+
+.sign_in{
+	margin: auto;
+	border: 1px solid red;
+}
+
+.signin_title{
+	text-align: center;
+}
+
+.hello{
+	margin:auto 400px;
+}

@@ -3,6 +3,7 @@
 <head>
   <title>GentleReminder</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "main", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -10,8 +11,8 @@
 		<div class = "container">
 			<div class = "row">
 				<div class="col-md-10 col-md-offset-1">
-					<h1 class = "title">GENTLE REMINDER</h1>
-					<h1 class = "subtitle">Commit to doing more.</h1>
+					<h1 class="title">GENTLE REMINDER</h1>
+					<h1 class= "subtitle">Commit to doing more.</h1>
 						<div class = "row">
 							<% if signed_in? %>
 						  	<%= link_to "Sign Out", signout_path, method: "delete"%>

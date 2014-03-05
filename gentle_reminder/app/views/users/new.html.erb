@@ -1,12 +1,14 @@
 <!-- Page Complete for styling 2/8 -->
 
 
-	<div class= "md-col-6 col-md-offset-4">
+<!-- 	<div class= "md-col-6 col-md-offset-4"> -->
+<div class="sign_in">
+	<div class="signin_title">
 		<h1>Sign up now</h1>
 		<h3>Its free and easy!</h3>
-
-		<div class = "row">
-			<div class = "col-md-10 col-md-offset-1">
+	</div>
+		
+			<div class = "hello">
 			<%= form_for(@user) do |f| %>
 				<%= render 'shared/error_messages' %>
 				<%=f.label :name %>
@@ -30,8 +32,7 @@
 				<br>
 				<%= f.submit "Create Account" %>
 			</div>
-		</div>
-	</div>
+</div> 
 
 
 
