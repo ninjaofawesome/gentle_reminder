@@ -8,23 +8,24 @@
   <div class= "col-md-6">
       <h1 class ="heavy">MY STATS</h1>
        <% @goals_array.each do |goal_hash| %>
-         <ul>
-          <li><h3><%= goal_hash[:goal_key].goal_type.name %></h3></li>
+    <ul>
+        <li><h3>Goal Title: <%= goal_hash[:goal_key].name %></h3></li>
         
         <h3>Finish Date</h3>
           <li><h3 class = "turnpike">Finish Date: <%= goal_hash[:date] %></h3></li>
-        <h3>My Charity</h3>
-        	<li><h3 class = "turnpike">My Charity: <%= goal_hash[:goal_key].charity.name%></h3></li>
-        <h3>My Pledge</h3>
-        	<li><h3 class = "turnpike">My Pledge: <%= goal_hash[:goal_key].monetary_amount %></h3></li>
+        
         <h3>Repo Name</h3>
           <li><h3 class = "turnpike">Repo Name: <%= goal_hash[:goal_key].repo%></h3> </li>
+        
         <h3>Total Commits</h3>
           <li><h3 class = "turnpike">My Commits: <%= goal_hash[:goal_key].commitments %></h3></li>
-      	<!-- <li>My Meetups: <%= goal_hash[:goal_key].meetups %></li> -->
+      	
         <h3>Commits This Week</h3>
           <li><h3 class = "turnpike"> Past week commits: <%= @weekly_commits%></h3> </li>
+    </ul>
+  </br></br>
       <% end %>
+   
   </div>
 
 </div>
