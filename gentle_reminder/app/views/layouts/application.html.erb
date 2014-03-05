@@ -9,7 +9,7 @@
 	<body>
 		<div class = "container">
 			<div class = "row">
-				<div class="col-md-8 col-md-offset-2">
+				<div class="col-md-10 col-md-offset-1">
 					<h1 class = "title">GENTLE REMINDER</h1>
 					<h1 class = "subtitle">Commit to doing more.</h1>
 						<div class = "row">
@@ -31,13 +31,9 @@
 				</div>
 			</div>
 
-			<div class= "row">
-				<div class = "col-md-6 col-md-offset-2">
 					<% flash.each do |key, value| %>
 						<span><%= value %></span>
 					<% end %>
-				</div>
-			</div>
 
 				<%= yield %>
 

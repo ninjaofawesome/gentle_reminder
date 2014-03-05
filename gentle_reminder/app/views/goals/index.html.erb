@@ -12,18 +12,18 @@
           <li><h3><%= goal_hash[:goal_key].goal_type.name %></h3></li>
         
         <h3>Finish Date</h3>
-          <li>Finish Date: <%= goal_hash[:date] %></li>
+          <li><h3 class = "turnpike">Finish Date: <%= goal_hash[:date] %></h3></li>
         <h3>My Charity</h3>
-        	<li>My Charity: <%= goal_hash[:goal_key].charity.name%></li>
+        	<li><h3 class = "turnpike">My Charity: <%= goal_hash[:goal_key].charity.name%></h3></li>
         <h3>My Pledge</h3>
-        	<li>My Pledge: <%= goal_hash[:goal_key].monetary_amount %></li>
+        	<li><h3 class = "turnpike">My Pledge: <%= goal_hash[:goal_key].monetary_amount %></h3></li>
         <h3>Repo Name</h3>
-          <li>Repo Name: <%= goal_hash[:goal_key].repo%> </li>
+          <li><h3 class = "turnpike">Repo Name: <%= goal_hash[:goal_key].repo%></h3> </li>
         <h3>Total Commits</h3>
-          <li>My Commits: <%= goal_hash[:goal_key].commitments %></li>
+          <li><h3 class = "turnpike">My Commits: <%= goal_hash[:goal_key].commitments %></h3></li>
       	<!-- <li>My Meetups: <%= goal_hash[:goal_key].meetups %></li> -->
         <h3>Commits This Week</h3>
-          <li> Past week commits: <%= @weekly_commits%> </li>
+          <li><h3 class = "turnpike"> Past week commits: <%= @weekly_commits%></h3> </li>
       <% end %>
   </div>
 

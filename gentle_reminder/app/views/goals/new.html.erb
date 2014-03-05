@@ -2,18 +2,21 @@
 	<h1>Create Your Goal</h1>
 	<%= form_for([@user, @goal]) do |f| %>
 
-		<%= label_tag "What is the title of this goal?" %>
+		<div class = "heavy"><%= label_tag "Name Your Coding Goal!" %></div>
 		<%= text_field_tag :name %>
 	
-		<h3>How long will it take you to reach your Github commit goal?</h3>
-		<%= label_tag "Thirty Days" %>
-		<%= radio_button_tag(:timeframe, "30") %>
-		<%= label_tag "Ninety Days" %>
-		<%= radio_button_tag(:timeframe, "90") %>
-		<%= label_tag "One Hundred Eighty Days" %>
-		<%= radio_button_tag(:timeframe, "180") %>
+		<h3 class= "turnpike">How long will it take you to reach your Github commit goal?</h3>
+		<div class = "heavy">
+			<%= label_tag "Thirty Days" %>
+			<%= radio_button_tag(:timeframe, "30") %>
+			<%= label_tag "Ninety Days" %>
+			<%= radio_button_tag(:timeframe, "90") %>
+			<%= label_tag "One Hundred Eighty Days" %>
+			<%= radio_button_tag(:timeframe, "180") %>
+		</div>
 	
-			<h4>How many commits will you need to meet your goal?</h4>
+		<h3 class= "turnpike">How many commits will you need to meet your goal?</h3>
+		<div class = "heavy">
 			<%= label_tag "10 Commits" %>
 			<%= radio_button_tag(:commitments, 10) %>
 			<%= label_tag "25 commits" %>
@@ -22,16 +25,15 @@
 			<%= radio_button_tag(:commitments, 50) %>
 			<%= label_tag "100 commits" %>
 			<%= radio_button_tag(:commitments, 100) %>
-	
+		</div>
+		
 	
 
-		<%= label_tag "What Repo will we be tracking?" %>
+		<h4 class= "turnpike"><%= label_tag "What Repo will we be tracking?" %></h4>
 		<%= text_field_tag :repo %>
-
-	
-	
-
-
+		<br>
+		<br>
+		<br>
 		<%= f.submit ("Lets Do This!") %>
 
 

@@ -68,6 +68,12 @@ h1, h2, h3, h4, h5, h6 {
 	// color: yellow;
 }
 
+h1.turnpike, h2.turnpike, h3.turnpike, h4.turnpike, h5.turnpike, h6.turnpike {
+	font-family: 'turnpike', helvetica, arial, sans-serif;
+	color: $deep-teal;
+	// color: yellow;
+}
+
 h1.title {
 	font-family: 'portersans', helvetica, arial, sans-serif;
 	font-size: 500%;
@@ -86,6 +92,7 @@ p {
 
 .heavy {
 	font-weight: 900;
+	font-size: 125%;
 }
 
 // INPUT STYLING
