@@ -1,14 +1,17 @@
 <!-- This page is mostly complete. -->
 
 <div class= "col-md-6">
-		<h1 class = "github-access">Welcome, <%=@user.name%>!</h1>
+		<h1>Welcome, <%=@user.name%>!</h1>
 
 		<p>Gentle reminder helps track your goals through quantifiable means, primarily GitHub.  Help us help you by giving us your GitHub information.  Thanks!</p>
 		<br>
 		<%= form_for(@user) do |f| %>
 				    <%= render 'shared/error_messages' %>
+				    <br>
 				    <%=f.label "What is your Github username?" %>
+				    <br>
 				    <%=f.text_field :github_name%> 
+				    <br>
 				    <%= f.submit "That's it" %>
 </div>
 	<%end%>
