@@ -8,11 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 	<body>
-		<div class = "container">
+		<!-- <div class = "container">
 			<div class = "row">
-				<div class="col-md-10 col-md-offset-1">
+				<div class="col-md-10 col-md-offset-1"> -->
+					<header class="home">
+					<div class="container">
+					<div class="header-titles">
 					<h1 class="title">GENTLE REMINDER</h1>
-					<h1 class= "subtitle">Commit to doing more.</h1>
+					<h2 class= "subtitle">Achieve your development goals</h2>
+				</div>
+			</div>
 						<div class = "row">
 							<% if signed_in? %>
 						  	<%= link_to "Sign Out", signout_path, method: "delete"%>
@@ -29,17 +34,18 @@
 							
 							</div>
 					    </div>
-				</div>
+					  </header>
+				<!-- </div>
 			</div>
-
+ -->
 					<% flash.each do |key, value| %>
 						<span><%= value %></span>
 					<% end %>
 
 				<%= yield %>
 
-			</div>
-		</div>
+			<!-- </div>
+		</div> -->
 	</body>
 </html>
 
