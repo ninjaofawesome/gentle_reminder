@@ -1,12 +1,16 @@
-<div class = "col-md-6">
-	<h1>Create Your Goal</h1>
+<!-- <div class = "col-md-6"> -->
+<div class="container">
+	<div class="goal-track-container">
+	<h2>Track A Repo</h2>
 	<%= form_for([@user, @goal]) do |f| %>
 
-		<div class = "heavy"><%= label_tag "Name Your Coding Goal!" %></div>
-		<%= text_field_tag :name %>
+		<!-- <div class = "heavy"><%= label_tag "Name Your Coding Goal!" %></div> -->
+		<table class="table-bordered">
+		<tr>
+		<h3>Goal Name: <%= text_field_tag :name %></h3>
 	
-		<h3 class= "turnpike">How long will it take you to reach your Github commit goal?</h3>
-		<div class = "heavy">
+		<h3 class= "turnpike">Time length for Github Commit Goal</h3>
+		<div class = "goal_radio_buttons">
 			<%= label_tag "Thirty Days" %>
 			<%= radio_button_tag(:timeframe, "30") %>
 			<%= label_tag "Ninety Days" %>
@@ -14,9 +18,9 @@
 			<%= label_tag "One Hundred Eighty Days" %>
 			<%= radio_button_tag(:timeframe, "180") %>
 		</div>
-	
-		<h3 class= "turnpike">How many commits will you need to meet your goal?</h3>
-		<div class = "heavy">
+	 </tr>
+		<h3 class= "turnpike">Commits to meet Goal!</h3>
+		<div class = "goal_radio_buttons">
 			<%= label_tag "10 Commits" %>
 			<%= radio_button_tag(:commitments, 10) %>
 			<%= label_tag "25 commits" %>
@@ -29,15 +33,12 @@
 		
 	
 
-		<h4 class= "turnpike"><%= label_tag "What Repo will we be tracking?" %></h4>
-		<%= text_field_tag :repo %>
+	<!-- 	<h4 class= "turnpike"> label_tag "What Repo will we be tracking?" %></h4> -->
+		<h3> Enter Git Repo for Tracking: <%= text_field_tag :repo %></h3>
+		
+		<%= f.submit ("Lets Git It!") %>
 		<br>
-		<br>
-		<br>
-		<%= f.submit ("Lets Do This!") %>
-
-
-
 	<%end%>
-
+</table>
+</div>
 </div>
